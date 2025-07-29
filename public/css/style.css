@@ -75,8 +75,8 @@ body {
 }
 
 .status-indicator {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background: #10b981;
     border-radius: 50%;
     animation: pulse 2s infinite;
@@ -243,11 +243,6 @@ body {
             color: var(--text-secondary);
         }
 
-        .action-buttons {
-            display: flex;
-            gap: 0.5rem;
-            padding: 0.5rem;
-        }
 
         .action-button {
             background: none;

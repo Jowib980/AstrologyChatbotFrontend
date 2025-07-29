@@ -160,6 +160,9 @@
     </div>
 
     <script>
+
+        const BACKEND_API_URL = "{{ env('BACKEND_API_URL') }}"
+
         // Tab switching
         const loginTab = document.getElementById('login-tab');
         const registerTab = document.getElementById('register-tab');
@@ -196,7 +199,7 @@
             document.getElementById('login-error').classList.add('hidden');
             
             try {
-                const response = await fetch('http://127.0.0.1:5000/api/login', {
+                const response = await fetch(`${BACKEND_API_URL}/login`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, password })
@@ -242,7 +245,7 @@
             
             try {
                 // Simulate API call to your Python backend
-               const response = await fetch('http://127.0.0.1:5000/api/register', {
+               const response = await fetch(`${BACKEND_API_URL}/register`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, email, password })

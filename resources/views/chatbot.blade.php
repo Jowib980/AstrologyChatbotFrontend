@@ -11,7 +11,7 @@
                     <div>
                         <h1 style="margin: 0; font-size: 1.5rem;">Astrology AI Assistant</h1>
                         <div class="bot-status" style="display: flex; align-items: center; gap: 0.5rem;">
-                            <div class="status-indicator" style="width: 10px; height: 10px; background-color: #00c853; border-radius: 50%;"></div>
+                            <div class="status-indicator"></div>
                             <span style="font-size: 0.9rem; color: #555;">Online</span>
                         </div>
                     </div>
@@ -101,13 +101,7 @@
             <div class="input-container">
                 <div class="input-wrapper">
                     <input type="text" class="message-input" id="userQuestion" placeholder="Type your question..." aria-label="Message input" style="display: none;">
-                    <div class="action-buttons" style="display: none;">
-                        <!-- <button class="action-button" aria-label="Add attachment">
-                            <i class="fas fa-paperclip"></i>
-                        </button>
-                        <button class="action-button" aria-label="Voice input">
-                            <i class="fas fa-microphone"></i>
-                        </button> -->
+                    <div class="action-buttons">
                         <button class="send-button" id="sendQuestionButton" style="display: none;">
                             <span>Send</span>
                             <i class="fas fa-paper-plane"></i>
@@ -123,6 +117,7 @@
         let userDOB = '';
         let birthtime = '';
         let birthplace = '';
+        const BACKEND_API_URL = "{{ env('BACKEND_API_URL') }}"
 
         document.addEventListener('DOMContentLoaded', function () {
             userName = localStorage.getItem("username");
@@ -142,7 +137,7 @@
                 document.querySelector('.user-input-section').style.display = 'block';
             }
 
-            fetch(`http://127.0.0.1:5000/api/history/${userId}`)
+            fetch(`${BACKEND_API_URL}/history/${userId}`)
                 .then(res => res.json())
                 .then(data => {
                     // ✅ Save user info to localStorage if not already set
