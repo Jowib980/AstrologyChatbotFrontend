@@ -1,22 +1,52 @@
-<h2>Your Kundli</h2>
-<p><strong>Name:</strong> {{ $kundli['name'] }}</p>
-<p><strong>Gender:</strong> {{ $kundli['gender'] }}</p>
-<p><strong>Date of Birth:</strong> {{ $kundli['dob'] }}</p>
-<p><strong>Time of Birth:</strong> {{ $kundli['tob'] }}</p>
-<p><strong>Place:</strong> {{ $kundli['place'] }}</p>
+@extends('layouts.app')
 
-@if(isset($kundli['predictions']) && is_array($kundli['predictions']))
-    <p><strong>Prediction:</strong></p>
-    <ul>
-        @foreach ($kundli['predictions'] as $prediction)
-            <li>{{ $prediction }}</li>
-        @endforeach
-    </ul>
-@endif
+@section('title', 'Kundli Chart')
 
-@if(isset($kundli['chart_image_base64']))
-    <div style="margin: 20px 0;">
-        <h3>Kundli Chart</h3>
-        <img src="data:image/png;base64,{{ $kundli['chart_image_base64'] }}" alt="Kundli Chart">
+@section('content')
+    <div class="min-h-screen bg-gradient-to-tr from-purple-100 to-indigo-100 p-6 flex justify-center items-center">
+        <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-2xl">
+            <h2 class="text-3xl font-bold text-indigo-700 mb-6 text-center"> Your Kundli Report</h2>
+
+            <div class="space-y-4 text-gray-800">
+                <p><strong class="text-indigo-600">Name:</strong> {{ $kundli['lagna_chart']['name'] ?? '' }}</p>
+                <p><strong class="text-indigo-600">Gender:</strong> {{ $kundli['lagna_chart']['gender'] ?? '' }}</p>
+                <p><strong class="text-indigo-600">Date of Birth:</strong> {{ $kundli['lagna_chart']['dob'] ?? '' }}</p>
+                <p><strong class="text-indigo-600">Time of Birth:</strong> {{ $kundli['lagna_chart']['tob'] ?? '' }}</p>
+                <p><strong class="text-indigo-600">Place:</strong> {{ $kundli['lagna_chart']['place'] ?? '' }}</p>
+
+                @if(!empty($kundli['lagna_chart']['predictions']) && is_array($kundli['lagna_chart']['predictions']))
+                    <div class="mt-6">
+                        <h3 class="text-xl font-semibold text-indigo-700 mb-2">🔮 Predictions</h3>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700">
+                            @foreach ($kundli['lagna_chart']['predictions'] as $prediction)
+                                <li>{{ $prediction }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                    @if(!empty($kundli['lagna_chart']['chart_image_base64']))
+                        <div>
+                            <h3 class="text-xl font-semibold text-indigo-700 mb-3">🌀 Lagna Chart</h3>
+                            <img src="data:image/jpeg;base64,{{ $kundli['lagna_chart']['chart_image_base64']
+                            }}"
+                                alt="Lagna Chart"
+                                class="mx-auto rounded-lg border shadow-md max-w-md w-full">
+                        </div>
+                    @endif
+
+                    @if(!empty($kundli['navamsa_chart']['chart_image_base64']))
+                        <div>
+                            <h3 class="text-xl font-semibold text-indigo-700 mb-3">🌙 Navamsa Chart</h3>
+                            <img src="data:image/jpeg;base64,{{
+                                $kundli['navamsa_chart']['chart_image_base64'] }}"
+                                alt="Navamsa Chart"
+                                class="mx-auto rounded-lg border shadow-md max-w-md w-full">
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </div>
     </div>
-@endif
+@endsection
