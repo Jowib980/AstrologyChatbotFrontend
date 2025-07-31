@@ -381,3 +381,8 @@ body {
     height: 40px; 
     border-radius: 50%;
 }
+
+.card-image {
+    width: 70px;
+    height: 90px;
+}

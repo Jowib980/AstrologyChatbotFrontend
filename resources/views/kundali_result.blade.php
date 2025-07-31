@@ -25,9 +25,9 @@
                     </div>
                 @endif
 
-                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                <div class="mt-8 text-center">
                     @if(!empty($kundli['lagna_chart']['chart_image_base64']))
-                        <div>
+                        <div class="mt-6">
                             <h3 class="text-xl font-semibold text-indigo-700 mb-3">🌀 Lagna Chart</h3>
                             <img src="data:image/jpeg;base64,{{ $kundli['lagna_chart']['chart_image_base64']
                             }}"
@@ -37,7 +37,7 @@
                     @endif
 
                     @if(!empty($kundli['navamsa_chart']['chart_image_base64']))
-                        <div>
+                        <div class="mt-6">
                             <h3 class="text-xl font-semibold text-indigo-700 mb-3">🌙 Navamsa Chart</h3>
                             <img src="data:image/jpeg;base64,{{
                                 $kundli['navamsa_chart']['chart_image_base64'] }}"
