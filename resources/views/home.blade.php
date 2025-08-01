@@ -4,7 +4,7 @@
 
 @section('content')
 
-	<div class="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-200 to-purple-300 p-6">
+	<div class="min-h-screen flex items-center justify-center p-6">
     	<div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
     		<div class="grid grid-cols-2 gap-2">
     			<div class="card">
@@ -15,14 +15,16 @@
     					<img src="{{ asset('images/ic_kundali.png') }}" class="card-image">
     				</div>
     			</div>
-    			<div class="card">
-    				<div class="card-title">
-    					<h2 class="text-xl font-semibold text-center p-2">Match Horoscope</h2>
-    				</div>
-    				<div class="flex justify-center">
-    					<img src="{{ asset('images/ic_kundali.png') }}" class="card-image">
-    				</div>
-    			</div>
+    			<a href="/horoscope">
+    				<div class="card">
+	    				<div class="card-title">
+	    					<h2 class="text-xl font-semibold text-center p-2">Match Horoscope</h2>
+	    				</div>
+	    				<div class="flex justify-center">
+	    					<img src="{{ asset('images/ic_matching.png') }}" class="card-image">
+	    				</div>
+	    			</div>
+    			</a>
     		</div>
     	</div>
     </div>

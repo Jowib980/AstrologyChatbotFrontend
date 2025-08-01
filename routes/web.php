@@ -19,13 +19,21 @@ Route::get('/bot', function () {
 });
 
 
+Route::get('/search-city', [LocationController::class, 'search'])->name('city');
+
 Route::get('/kundali', function () {
     return view('kundali');
 });
 
 Route::post('/kundali', [KundaliController::class, 'submit'])->name('submit.kundali');
-Route::get('/search-city', [LocationController::class, 'search'])->name('city');
-
 Route::get('/home', function () {
     return view('home');
+});
+
+Route::get('/horoscope', function () {
+    return view('horoscope');
+});
+Route::get('/horoscope-result', function () {
+    $data = json_decode(urldecode(request()->query('data')), true);
+    return view('horoscope-result', compact('data'));
 });

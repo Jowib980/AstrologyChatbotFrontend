@@ -5,37 +5,27 @@
 @section('content')
     <div class="min-h-screen flex items-center justify-center p-6">
     <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
-        <h2 class="text-2xl font-bold text-center text-indigo-700 mb-6">Generate Your Kundali</h2>
+        <h2 class="text-2xl font-bold text-center text-indigo-700 mb-6">Match My Horoscope</h2>
 
         <form class="space-y-4">
             <div>
                 <label class="block text-gray-700 font-medium mb-1">Name</label>
                 <input name="name" placeholder="Your Name"
-                    id="userName"
+                    id="partnerName"
                     class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
-            </div>
-
-            <div>
-                <label class="block text-gray-700 font-medium mb-1">Gender</label>
-                <select name="gender"
-                    id="gender" 
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
             </div>
 
             <div>
                 <label class="block text-gray-700 font-medium mb-1">Date of Birth</label>
                 <input name="dob" type="date"
-                    id="userDOB" 
+                    id="partnerDOB" 
                     class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
             </div>
 
             <div>
                 <label class="block text-gray-700 font-medium mb-1">Time of Birth</label>
                 <input name="tob" type="time"
-                    id="birthtime"
+                    id="partnerbirthtime"
                     class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
             </div>
 
@@ -50,7 +40,7 @@
 
             <button type="submit"
                 class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-md" id="Submit">
-                Submit
+                Match Horoscope
             </button>
         </form>
     </div>
@@ -92,21 +82,43 @@ $(document).ready(function () {
 
     $('form').on('submit', function (e) {
         e.preventDefault();
-        const userName = $('#userName').val();
-        const userDOB = $('#userDOB').val();
-        const birthtime = $('#birthtime').val();
+
+        const partnerName = $('#partnerName').val();
+        const partnerDOB = $('#partnerDOB').val();
+        const partnerbirthtime = $('#partnerbirthtime').val();
         const birthplace = $('#place-input').val();
-        const gender = $('#gender').val();
 
-        if (userName) localStorage.setItem("username", userName);
-        if (userDOB) localStorage.setItem("userdob", userDOB);
-        if (birthtime) localStorage.setItem("birthtime", birthtime);
-        if (birthplace) localStorage.setItem("birthplace", birthplace);
-        if (gender) localStorage.setItem("gender", gender);
+        const user = {
+            name: localStorage.getItem("username"),
+            dob: localStorage.getItem("userdob"),
+            tob: localStorage.getItem("birthtime"),
+            place: localStorage.getItem("birthplace")
+        };
 
-        window.location.href = '/home';
+        const partner = {
+            name: partnerName,
+            dob: partnerDOB,
+            tob: partnerbirthtime,
+            place: birthplace
+        };
 
+        $.ajax({
+            url: "http://127.0.0.1:5000/api/match_horoscope",
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({ user, partner }),
+            success: function (res) {
+                if (res.status === "success") {
+                    // Display result in new page or section
+                    console.log(res.guna_matching);
+                    window.location.href = `/horoscope-result?data=${encodeURIComponent(JSON.stringify(res))}`;
+                } else {
+                    alert("Error: " + res.message);
+                }
+            }
+        });
     });
+
 
 
 });

@@ -34,13 +34,17 @@
             @endisset
 
             <!-- Page Content -->
-            <main>
+            <main class="sm:ml-64 pt-20">   
+                @include('layouts.partials.header')
+                @include('layouts.partials.sidebar')
                 @yield('content')
             </main>
         </div>
         
         @stack('scripts')
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Add Flowbite's JS (place before </body>) -->
+        <script src="https://unpkg.com/flowbite@2.3.0/dist/flowbite.min.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.min.js"></script>
 

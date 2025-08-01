@@ -3,7 +3,7 @@
 @section('title', 'Kundli Chart')
 
 @section('content')
-    <div class="min-h-screen bg-gradient-to-tr from-purple-100 to-indigo-100 p-6 flex justify-center items-center">
+    <div class="min-h-screen p-6 flex justify-center items-center">
         <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-2xl">
             <h2 class="text-3xl font-bold text-indigo-700 mb-6 text-center"> Your Kundli Report</h2>
 
