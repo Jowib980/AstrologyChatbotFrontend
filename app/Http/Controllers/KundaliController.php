@@ -28,4 +28,42 @@ class KundaliController extends Controller
         return view('kundali_result', ['kundli' => $data]);
     }
 
+    public function prediction(Request $request) {
+        $response = Http::withHeaders([
+            'Content-Type' => 'application/json'
+        ])->post('http://127.0.0.1:5000/api/predict_character', [
+            'name'   => $request->input('name'),
+            'dob'    => $request->input('dob'),
+            'tob'    => $request->input('tob'),
+            'place'  => $request->input('place'),
+        ]);
+
+        if (!$response->successful()) {
+            return back()->withErrors(['api' => 'Life Prediction.']);
+        }
+
+        $data = $response->json();
+
+        return view('prediction-result', ['prediction' => $data]);
+    }
+
+    public function numerology(Request $request) {
+        $response = Http::withHeaders([
+            'Content-Type' => 'application/json'
+        ])->post('http://127.0.0.1:5000/api/numerology', [
+            'name'   => $request->input('name'),
+            'dob'    => $request->input('dob'),
+            'tob'    => $request->input('tob'),
+            'place'  => $request->input('place'),
+        ]);
+
+        if (!$response->successful()) {
+            return back()->withErrors(['api' => 'Numerology.']);
+        }
+
+        $data = $response->json();
+
+        return view('numerology-result', ['data' => $data]);
+    }
+    
 }

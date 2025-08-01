@@ -37,3 +37,8 @@ Route::get('/horoscope-result', function () {
     $data = json_decode(urldecode(request()->query('data')), true);
     return view('horoscope-result', compact('data'));
 });
+Route::post('/prediction', [KundaliController::class, 'prediction'])->name('submit.prediction');
+Route::get('/numerology', function () {
+    return view('numerology');
+});
+Route::post('/numerology', [KundaliController::class, 'numerology'])->name('submit.numerology');

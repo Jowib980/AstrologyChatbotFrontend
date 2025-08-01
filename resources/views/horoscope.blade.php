@@ -3,48 +3,49 @@
 @section('title', 'Kundli')
 
 @section('content')
+
     <div class="min-h-screen flex items-center justify-center p-6">
-    <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
-        <h2 class="text-2xl font-bold text-center text-indigo-700 mb-6">Match My Horoscope</h2>
+        <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
+            <h2 class="text-2xl font-bold text-center text-indigo-700 mb-6">Match My Horoscope</h2>
 
-        <form class="space-y-4">
-            <div>
-                <label class="block text-gray-700 font-medium mb-1">Name</label>
-                <input name="name" placeholder="Your Name"
-                    id="partnerName"
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
-            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Name</label>
+                    <input name="name" placeholder="Your Name"
+                        id="partnerName"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
+                </div>
 
-            <div>
-                <label class="block text-gray-700 font-medium mb-1">Date of Birth</label>
-                <input name="dob" type="date"
-                    id="partnerDOB" 
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
-            </div>
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Date of Birth</label>
+                    <input name="dob" type="date"
+                        id="partnerDOB" 
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
+                </div>
 
-            <div>
-                <label class="block text-gray-700 font-medium mb-1">Time of Birth</label>
-                <input name="tob" type="time"
-                    id="partnerbirthtime"
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
-            </div>
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Time of Birth</label>
+                    <input name="tob" type="time"
+                        id="partnerbirthtime"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
+                </div>
 
-            <div>
-                <label class="block text-gray-700 font-medium mb-1">Place of Birth</label>
-                <input type="text" name="place" id="place-input" placeholder="e.g., Delhi" 
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm"
-                    autocomplete="off">
-                <ul id="place-suggestions" class="bg-white border rounded shadow-md mt-1 hidden absolute z-50 w-[100px]"></ul>
-            </div>
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Place of Birth</label>
+                    <input type="text" name="place" id="place-input" placeholder="e.g., Delhi" 
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm"
+                        autocomplete="off">
+                    <ul id="place-suggestions" class="bg-white border rounded shadow-md mt-1 hidden absolute z-50 w-[100px]"></ul>
+                </div>
 
 
-            <button type="submit"
-                class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-md" id="Submit">
-                Match Horoscope
-            </button>
-        </form>
+                <button type="submit"
+                    class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-md" id="Submit">
+                    Match Horoscope
+                </button>
+            </form>
+        </div>
     </div>
-</div>
 
 @endsection
 
@@ -118,8 +119,6 @@ $(document).ready(function () {
             }
         });
     });
-
-
 
 });
 </script>
