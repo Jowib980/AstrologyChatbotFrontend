@@ -7,7 +7,7 @@ use App\Http\Controllers\KundaliController;
 use App\Http\Controllers\LocationController;
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('home');
 });
 
 Route::get('/login', function () {
@@ -42,3 +42,6 @@ Route::get('/numerology', function () {
     return view('numerology');
 });
 Route::post('/numerology', [KundaliController::class, 'numerology'])->name('submit.numerology');
+Route::post('/nakshatra', [KundaliController::class, 'nakshatra'])->name('submit.nakshatra');
+Route::post('/health', [KundaliController::class, 'health'])->name('submit.health');
+Route::post('/love', [KundaliController::class, 'love'])->name('submit.love');

@@ -386,3 +386,8 @@ body {
     width: 99px;
     height: 110px;
 }
+
+.circle-progress {
+    height: 100px;
+    margin: auto;
+}

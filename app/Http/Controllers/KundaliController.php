@@ -65,5 +65,62 @@ class KundaliController extends Controller
 
         return view('numerology-result', ['data' => $data]);
     }
+
+    public function nakshatra(Request $request) {
+        $response = Http::withHeaders([
+            'Content-Type' => 'application/json'
+        ])->post('http://127.0.0.1:5000/api/nakshatra', [
+            'dob' => $request->input('dob'),
+            'tob' => $request->input('tob'),
+            'place' => $request->input('place'),
+        ]);
+
+        if(!$response->successful()) {
+            return back()->withErrors(['api', 'Nakshatra.']);
+        }
+
+        $data = $response->json();
+
+        return view('nakshatra-result', ['data' => $data]);
+    }
+
+    public function health(Request $request) {
+        $response = Http::withHeaders([
+            'Content-Type' => 'application/json'
+        ])->post('http://127.0.0.1:5000/api/health', [
+            'dob' => $request->input('dob'),
+            'tob' => $request->input('tob'),
+            'place' => $request->input('place'),
+        ]);
+
+        if(!$response->successful()) {
+            return back()->withErrors(['api', 'Health']);
+        }
+
+        $data = $response->json();
+
+       return view('health-result', ['health_index' => $data['health_index'] ?? 0]);
+
+    }
+
+    public function love(Request $request) {
+        $response = Http::withHeaders([
+            'Content-Type' => 'application/json'
+        ])->post('http://127.0.0.1:5000/api/love', [
+            'name' => $request->input('name'),
+            'dob' => $request->input('dob'),
+            'tob' => $request->input('tob'),
+            'place' => $request->input('place'),
+            'gender' => $request->input('gender')
+        ]);
+
+        if(!$response->successful()) {
+            return back()->withErrors(['api', 'love']);
+        }
+
+        $data = $response->json();
+
+        return view('love-result', ['data' => $data]);
+    }
     
 }
