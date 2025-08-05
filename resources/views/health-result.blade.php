@@ -14,18 +14,18 @@
                     <!-- Background Circle -->
                     <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-gray-200 dark:text-neutral-700" stroke-width="2"></circle>
                     <!-- Progress Circle -->
-                    <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-blue-600 dark:text-blue-500" stroke-width="2" stroke-dasharray="{{ $health_index ?? 0 }}" stroke-dashoffset="100" stroke-linecap="round"></circle>
+                    <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-blue-600 dark:text-blue-500" stroke-width="2" stroke-dasharray="{{ $data ?? 0 }}" stroke-dashoffset="100" stroke-linecap="round"></circle>
                 </svg>
 
                 <!-- Percentage Text -->
                 <div class="w-full text-center">
-                    <span class="text-center text-2xl font-bold text-blue-600 dark:text-blue-500">{{ $health_index ?? 0 }}%</span>
+                    <span class="text-center text-2xl font-bold text-blue-600 dark:text-blue-500">{{ $data ?? 0 }}%</span>
                 </div>
-                @if($health_index <= 25)
+                @if($data <= 25)
                     <span class="text-sm text-gray-400">Very Weak</span>
-                @elseif($health_index > 25 && $health_index <= 50)
+                @elseif($data > 25 && $data <= 50)
                     <span class="text-sm text-gray-400">Weak</span>
-                @elseif($health_index > 50 && $health_index <= 75)
+                @elseif($data > 50 && $data <= 75)
                     <span class="text-sm text-gray-400">Average</span>
                 @else
                     <span class="text-sm text-gray-400">Strong</span>

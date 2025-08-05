@@ -3,279 +3,102 @@
 @section('title', 'Home')
 
 @section('content')
+<div class="min-h-screen flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-xxl">
+        <div class="grid grid-cols-3 gap-2">
 
-	<div class="min-h-screen flex items-center justify-center p-6">
-    	<div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-xxl">
-    		<div class="grid grid-cols-3 gap-2">
-    			<div class="card cursor-pointer" id="birth-kundali-card">
-    				<div class="card-title">
-    					<h2 class="text-xl font-semibold text-center p-2">Birth Kundali/Chart</h2>
-    				</div>
-    				<div class="flex justify-center">
-    					<img src="{{ asset('images/ic_kundali.png') }}" class="card-image">
-    				</div>
-    				<p class="p-2 font-semibold text-md text-center">Planetary position and your chart...</p>
-    			</div>
-    			<a href="/horoscope">
-    				<div class="card cursor-pointer">
-	    				<div class="card-title">
-	    					<h2 class="text-xl font-semibold text-center p-2">Match Horoscope</h2>
-	    				</div>
-	    				<div class="flex justify-center">
-	    					<img src="{{ asset('images/ic_matching.png') }}" class="card-image">
-	    				</div>
-	    				<p class="p-2 font-semibold text-md text-center">Match Horoscope  (Guna milan with your partner)</p>
-	    			</div>
-    			</a>
-    			<div class="card cursor-pointer prediction-card">
-    				<div class="card-title">
-    					<h2 class="text-xl font-semibold text-center p-2">Your Life Predictions</h2>
-    				</div>
-    				<div class="flex justify-center">
-    					<img src="{{ asset('images/ic_predection.png') }}" class="card-image">
-    				</div>
-    				<p class="p-2 font-semibold text-md text-center">Know about your Nature Love  and Career </p>
-    			</div>
-    			<div class="card cursor-pointer" id="numerology-card">
-    				<div class="card-title">
-    					<h2 class="text-xl font-semibold text-center p-2">Numerology </h2>
-    				</div>
-    				<div class="flex justify-center">
-    					<img src="{{ asset('images/ic_numerology.png') }}" class="card-image">
-    				</div>
-    				<p class="p-2 font-semibold text-md text-center">Know your lucky number </p>
-    			</div>
-    			<div class="card cursor-pointer" id="nakshatra-card">
-    				<div class="card-title">
-    					<h2 class="text-xl font-semibold text-center p-2">Nakshatra </h2>
-    				</div>
-    				<div class="flex justify-center">
-    					<img src="{{ asset('images/nakshatra.png') }}" class="card-image">
-    				</div>
-    				<p class="p-2 font-semibold text-md text-center">Know about your Nakshatra</p>
-    			</div>
-    			<div class="card cursor-pointer prediction-card">
-    				<div class="card-title">
-    					<h2 class="text-xl font-semibold text-center p-2">Nature </h2>
-    				</div>
-    				<div class="flex justify-center">
-    					<img src="{{ asset('images/nakshatra.png') }}" class="card-image">
-    				</div>
-    				<p class="p-2 font-semibold text-md text-center">Know about your Nature</p>
-    			</div>
-    			<div class="card cursor-pointer" id="health-card">
-    				<div class="card-title">
-    					<h2 class="text-xl font-semibold text-center p-2">Health Index </h2>
-    				</div>
-    				<div class="flex justify-center">
-    					<img src="{{ asset('images/ic_health.png') }}" class="card-image">
-    				</div>
-    				<p class="p-2 font-semibold text-md text-center">Know about your health</p>
-    			</div>
-    			<div class="card cursor-pointer" id="love-card">
-    				<div class="card-title">
-    					<h2 class="text-xl font-semibold text-center p-2">Love </h2>
-    				</div>
-    				<div class="flex justify-center">
-    					<img src="{{ asset('images/love.png') }}" class="card-image">
-    				</div>
-    				<p class="p-2 font-semibold text-md text-center">Know about your love</p>
-    			</div>
-    		</div>
-    	</div>
+            @php
+                $cards = [
+                    ['id' => 'birth-kundali-card', 'title' => 'Birth Kundali/Chart', 'img' => 'ic_kundali.png', 'desc' => 'Planetary position and your chart...', 'route' => '/kundali', 'fields' => ['name','dob','tob','place','gender']],
+
+                    ['title' => 'Match Horoscope', 'img' => 'ic_matching.png', 'desc' => 'Match Horoscope (Guna milan with your partner)', 'route' => '/horoscope', 'link' => true],
+
+                    ['class' => 'prediction-card', 'title' => 'Your Life Predictions', 'img' => 'ic_predection.png', 'desc' => 'Know about your Nature Love and Career', 'route' => '/prediction', 'fields' => ['name','dob','tob','place']],
+
+                    ['id' => 'numerology-card', 'title' => 'Numerology', 'img' => 'ic_numerology.png', 'desc' => 'Know your lucky number', 'route' => '/numerology', 'fields' => ['name','dob','tob','place']],
+
+                    ['id' => 'nakshatra-card', 'title' => 'Nakshatra', 'img' => 'nakshatra.png', 'desc' => 'Know about your Nakshatra', 'route' => '/nakshatra', 'fields' => ['name','dob','tob','place']],
+
+                    ['title' => 'Nature', 'img' => 'nakshatra.png', 'desc' => 'Know about your Nature', 'route' => '/prediction', 'fields' => ['name','dob','tob','place']],
+
+                    ['id' => 'health-card', 'title' => 'Health Index', 'img' => 'ic_health.png', 'desc' => 'Know about your health', 'route' => '/health', 'fields' => ['dob','tob','place']],
+
+                    ['id' => 'love-card', 'title' => 'Love', 'img' => 'love.png', 'desc' => 'Know about your love', 'route' => '/love', 'fields' => ['name','dob','tob','place','gender']],
+
+                    ['id' => 'gemstone-card', 'title' => 'Gemstone', 'img' => 'ic_gemstone.png', 'desc' => 'Which gemstone will suit you? Which gem should you wear? How to wear gemstone?', 'route' => '/gemstone', 'fields' => ['name','dob','tob','place']],
+
+                    ['id' => 'career-card', 'title' => 'Career', 'img' => 'career.png', 'desc' => 'Know about your career', 'route' => '/career', 'fields' => ['name', 'dob', 'tob', 'place', 'gender']],
+
+                    ['id' => 'kalsarp-card', 'title' => 'Kalsarp Dosh/Yog', 'img' => 'kalsarp-dosh.png', 'desc' => 'Know about impact of Kalsharp dosh for whole life.', 'route' => '/kalsarp', 'fields' => ['name', 'dob', 'tob', 'place']],
+
+                    ['id' => 'mangla-card', 'title' => 'Mangal Dosha', 'img' => 'ic_mangal_dosh.png', 'desc' => 'Do you have Mangal dosha? What are the remedies? What are the impact on your married life?', 'route' => '/mangal', 'fields' => ['name', 'dob', 'tob', 'place']],
+
+                    ['id' => 'ascendant-card', 'title' => 'Ascendant', 'img' => 'ascendant.png', 'desc' => 'What does your Ascendant  Nakshatra  and Moon Sign  tell about you.', 'route' => '/ascendant', 'fields' => ['name', 'dob', 'tob', 'place']],
+
+                    ['id' => 'gochar-card', 'title' => 'Gochar Phal (Transit Report)', 'img' => 'ic_transit_today.png', 'desc' => "How does position of current planets impact you?", 'route' => '/transit', 'fields' => ['name', 'dob', 'tob', 'place']]
+                ];
+            @endphp
+
+            @foreach ($cards as $card)
+                @if(isset($card['link']) && $card['link'])
+                    <a href="{{ $card['route'] }}">
+                @endif
+                <div class="card cursor-pointer {{ $card['class'] ?? '' }}" 
+                     @if(isset($card['id'])) id="{{ $card['id'] }}" @endif 
+                     data-route="{{ $card['route'] }}" 
+                     data-fields='@json($card['fields'] ?? [])'>
+                    <div class="card-title">
+                        <h2 class="text-xl font-semibold text-center p-2">{{ $card['title'] }}</h2>
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="{{ asset('images/' . $card['img']) }}" class="card-image">
+                    </div>
+                    <p class="p-2 font-semibold text-md text-center">{{ $card['desc'] }}</p>
+                </div>
+                @if(isset($card['link']) && $card['link'])
+                    </a>
+                @endif
+            @endforeach
+
+        </div>
     </div>
+</div>
 @endsection
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script>
-	document.addEventListener('DOMContentLoaded', function () {
-	    const userName = localStorage.getItem("username");
-	    const userDOB = localStorage.getItem("userdob");
-	    const birthtime = localStorage.getItem("birthtime");
-	    const birthplace = localStorage.getItem("birthplace");
-	    const gender = localStorage.getItem("gender");
+document.addEventListener('DOMContentLoaded', function () {
+    const userData = {
+        name: localStorage.getItem("username"),
+        dob: localStorage.getItem("userdob"),
+        tob: localStorage.getItem("birthtime"),
+        place: localStorage.getItem("birthplace"),
+        gender: localStorage.getItem("gender")
+    };
 
-	    $('#birth-kundali-card').on('click', function () {
-	        if (!userName || !userDOB || !birthtime || !birthplace || !gender) {
-	            alert("Missing user data. Please fill the form first.");
-	            return;
-	        }
+    function createAndSubmitForm(route, fields) {
+        for (let f of fields) {
+            if (!userData[f]) {
+                alert("Missing user data. Please fill the form first.");
+                return;
+            }
+        }
 
-	        // Create a dynamic form
-	        const form = $('<form>', {
-	            method: 'POST',
-	            action: '/kundali'
-	        });
+        const form = $('<form>', { method: 'POST', action: route });
+        form.append($('<input>', { type: 'hidden', name: '_token', value: '{{ csrf_token() }}' }));
 
-	        // CSRF Token
-	        form.append($('<input>', {
-	            type: 'hidden',
-	            name: '_token',
-	            value: '{{ csrf_token() }}'
-	        }));
+        fields.forEach(field => {
+            form.append($('<input>', { type: 'hidden', name: field, value: userData[field] }));
+        });
 
-	        // Add user data
-	        form.append($('<input>', { type: 'hidden', name: 'name', value: userName }));
-	        form.append($('<input>', { type: 'hidden', name: 'dob', value: userDOB }));
-	        form.append($('<input>', { type: 'hidden', name: 'tob', value: birthtime }));
-	        form.append($('<input>', { type: 'hidden', name: 'place', value: birthplace }));
-	        form.append($('<input>', { type: 'hidden', name: 'gender', value: gender }));
+        $('body').append(form);
+        form.submit();
+    }
 
-	        // Append and submit
-	        $('body').append(form);
-	        form.submit();
-	    });
-
-	    $('.prediction-card').on('click', function () {
-	        if (!userName || !userDOB || !birthtime || !birthplace || !gender) {
-	            alert("Missing user data. Please fill the form first.");
-	            return;
-	        }
-
-	        // Create a dynamic form
-	        const form = $('<form>', {
-	            method: 'POST',
-	            action: '/prediction'
-	        });
-
-	        // CSRF Token
-	        form.append($('<input>', {
-	            type: 'hidden',
-	            name: '_token',
-	            value: '{{ csrf_token() }}'
-	        }));
-
-	        // Add user data
-	        form.append($('<input>', { type: 'hidden', name: 'name', value: userName }));
-	        form.append($('<input>', { type: 'hidden', name: 'dob', value: userDOB }));
-	        form.append($('<input>', { type: 'hidden', name: 'tob', value: birthtime }));
-	        form.append($('<input>', { type: 'hidden', name: 'place', value: birthplace }));
-
-	        // Append and submit
-	        $('body').append(form);
-	        form.submit();
-	    });
-
-	    $('#numerology-card').on('click', function () {
-	        if (!userName || !userDOB || !birthtime || !birthplace || !gender) {
-	            alert("Missing user data. Please fill the form first.");
-	            return;
-	        }
-
-	        // Create a dynamic form
-	        const form = $('<form>', {
-	            method: 'POST',
-	            action: '/numerology'
-	        });
-
-	        // CSRF Token
-	        form.append($('<input>', {
-	            type: 'hidden',
-	            name: '_token',
-	            value: '{{ csrf_token() }}'
-	        }));
-
-	        // Add user data
-	        form.append($('<input>', { type: 'hidden', name: 'name', value: userName }));
-	        form.append($('<input>', { type: 'hidden', name: 'dob', value: userDOB }));
-	        form.append($('<input>', { type: 'hidden', name: 'tob', value: birthtime }));
-	        form.append($('<input>', { type: 'hidden', name: 'place', value: birthplace }));
-
-	        // Append and submit
-	        $('body').append(form);
-	        form.submit();
-	    });
-
-	    $('#nakshatra-card').on('click', function () {
-	        if (!userDOB || !birthtime || !birthplace) {
-	            alert("Missing user data. Please fill the form first.");
-	            return;
-	        }
-
-	        // Create a dynamic form
-	        const form = $('<form>', {
-	            method: 'POST',
-	            action: '/nakshatra'
-	        });
-
-	        // CSRF Token
-	        form.append($('<input>', {
-	            type: 'hidden',
-	            name: '_token',
-	            value: '{{ csrf_token() }}'
-	        }));
-
-	        // Add user data
-	        form.append($('<input>', { type: 'hidden', name: 'name', value: userName }));
-	        form.append($('<input>', { type: 'hidden', name: 'dob', value: userDOB }));
-	        form.append($('<input>', { type: 'hidden', name: 'tob', value: birthtime }));
-	        form.append($('<input>', { type: 'hidden', name: 'place', value: birthplace }));
-
-	        // Append and submit
-	        $('body').append(form);
-	        form.submit();
-	    });
-
-	    $('#health-card').on('click', function () {
-	        if (!userDOB || !birthtime || !birthplace) {
-	            alert("Missing user data. Please fill the form first.");
-	            return;
-	        }
-
-	        // Create a dynamic form
-	        const form = $('<form>', {
-	            method: 'POST',
-	            action: '/health'
-	        });
-
-	        // CSRF Token
-	        form.append($('<input>', {
-	            type: 'hidden',
-	            name: '_token',
-	            value: '{{ csrf_token() }}'
-	        }));
-
-	        // Add user data
-	        form.append($('<input>', { type: 'hidden', name: 'dob', value: userDOB }));
-	        form.append($('<input>', { type: 'hidden', name: 'tob', value: birthtime }));
-	        form.append($('<input>', { type: 'hidden', name: 'place', value: birthplace }));
-
-	        // Append and submit
-	        $('body').append(form);
-	        form.submit();
-	    });
-
-	    $('#love-card').on('click', function () {
-	        if (!userName || !userDOB || !birthtime || !birthplace || !gender) {
-	            alert("Missing user data. Please fill the form first.");
-	            return;
-	        }
-
-	        // Create a dynamic form
-	        const form = $('<form>', {
-	            method: 'POST',
-	            action: '/love'
-	        });
-
-	        // CSRF Token
-	        form.append($('<input>', {
-	            type: 'hidden',
-	            name: '_token',
-	            value: '{{ csrf_token() }}'
-	        }));
-
-	        // Add user data
-	        form.append($('<input>', { type: 'hidden', name: 'name', value: userName }));
-	        form.append($('<input>', { type: 'hidden', name: 'dob', value: userDOB }));
-	        form.append($('<input>', { type: 'hidden', name: 'tob', value: birthtime }));
-	        form.append($('<input>', { type: 'hidden', name: 'place', value: birthplace }));
-	        form.append($('<input>', { type: 'hidden', name: 'gender', value: gender }));
-
-	        // Append and submit
-	        $('body').append(form);
-	        form.submit();
-	    });
-	});
+    $('.card').on('click', function () {
+        const route = $(this).data('route');
+        const fields = $(this).data('fields') || [];
+        if (route) createAndSubmitForm(route, fields);
+    });
+});
 </script>
-

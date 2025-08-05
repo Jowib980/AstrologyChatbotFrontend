@@ -9,22 +9,22 @@
         	<h2 class="text-2xl font-semibold text-center text-indigo-700 mb-4">Your Character, Happiness and Fulfillment, Lifestyle</h2>
 
             <div class="space-y-4 text-lg text-gray-800">
-                <p><strong>Lagna:</strong> {{ $prediction['character_prediction']['lagna'] }}</p>
-                <p><strong>Lagna Lord:</strong> {{ $prediction['character_prediction']['lagna_lord'] }}</p>
+                <p><strong>Lagna:</strong> {{ $data['character_prediction']['lagna'] }}</p>
+                <p><strong>Lagna Lord:</strong> {{ $data['character_prediction']['lagna_lord'] }}</p>
                 <p><strong>Character:</strong></p>
                 <p class="bg-gray-100 p-4 rounded-md text-justify">
-                    {{ $prediction['character_prediction']['character'] }}
+                    {{ $data['character_prediction']['character'] }}
                 </p>
                 <br>
                 <p><strong>Happiness and Fulfillment:</strong></p>
                 <p class="bg-gray-100 p-4 rounded-md text-justify">
-                    {{ $prediction['character_prediction']['happiness'] }}
-                    {{ $prediction['character_prediction']['fulfillment'] }}
+                    {{ $data['character_prediction']['happiness'] }}
+                    {{ $data['character_prediction']['fulfillment'] }}
                 </p>
                 <br>
                 <p><strong>Lifestyle:</strong>
                 	<p class="bg-gray-100 p-4 rounded-md text-justify">
-                    {{ $prediction['character_prediction']['lifestyle'] }}
+                    {{ $data['character_prediction']['lifestyle'] }}
                 </p>
             </div>
         </div>

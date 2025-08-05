@@ -45,3 +45,9 @@ Route::post('/numerology', [KundaliController::class, 'numerology'])->name('subm
 Route::post('/nakshatra', [KundaliController::class, 'nakshatra'])->name('submit.nakshatra');
 Route::post('/health', [KundaliController::class, 'health'])->name('submit.health');
 Route::post('/love', [KundaliController::class, 'love'])->name('submit.love');
+Route::post('/gemstone', [KundaliController::class, 'gemstone'])->name('submit.gemstone');
+Route::post('/career', [KundaliController::class, 'career'])->name('submit.career');
+Route::post('/kalsarp', [KundaliController::class, 'kalsarp'])->name('submit.kalsarp');
+Route::post('/mangal', [KundaliController::class, 'mangal'])->name('submit.mangal');
+Route::post('/ascendant', [KundaliController::class, 'ascendant'])->name('submit.ascendant');
+Route::post('/transit', [KundaliController::class, 'gochar'])->name('submit.transit');

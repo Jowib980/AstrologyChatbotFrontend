@@ -7,120 +7,161 @@ use Illuminate\Support\Facades\Http;
 
 class KundaliController extends Controller
 {
+
+    private function callApi(Request $request, string $endpoint, array $fields, string $view, string $errorKey, string $valueKey = null)
+    {
+        $payload = [];
+        foreach ($fields as $field) {
+            $payload[$field] = $request->input($field);
+        }
+
+        $response = Http::withHeaders([
+            'Content-Type' => 'application/json'
+        ])->post("http://127.0.0.1:5000/api/{$endpoint}", $payload);
+
+        if (!$response->successful()) {
+            return back()->withErrors([$errorKey => ucfirst($errorKey) . ' request failed.']);
+        }
+
+        $jsonData = $response->json();
+        $data = $valueKey ? ($jsonData[$valueKey] ?? null) : $jsonData;
+
+        return view($view, ['data' => $data]);
+    }
+
+
     public function submit(Request $request)
     {
-        $response = Http::withHeaders([
-            'Content-Type' => 'application/json'
-        ])->post('http://127.0.0.1:5000/api/kundali', [
-            'name'   => $request->input('name'),
-            'gender' => $request->input('gender'),
-            'dob'    => $request->input('dob'),
-            'tob'    => $request->input('tob'),
-            'place'  => $request->input('place'),
-        ]);
-
-        if (!$response->successful()) {
-            return back()->withErrors(['api' => 'Kundli generation failed.']);
-        }
-
-        $data = $response->json();
-
-        return view('kundali_result', ['kundli' => $data]);
+        return $this->callApi(
+            $request,
+            'kundali',
+            ['name', 'gender', 'dob', 'tob', 'place'],
+            'kundali_result',
+            'kundali'
+        );
     }
 
-    public function prediction(Request $request) {
-        $response = Http::withHeaders([
-            'Content-Type' => 'application/json'
-        ])->post('http://127.0.0.1:5000/api/predict_character', [
-            'name'   => $request->input('name'),
-            'dob'    => $request->input('dob'),
-            'tob'    => $request->input('tob'),
-            'place'  => $request->input('place'),
-        ]);
-
-        if (!$response->successful()) {
-            return back()->withErrors(['api' => 'Life Prediction.']);
-        }
-
-        $data = $response->json();
-
-        return view('prediction-result', ['prediction' => $data]);
+    public function prediction(Request $request)
+    {
+        return $this->callApi(
+            $request,
+            'predict_character',
+            ['name', 'dob', 'tob', 'place'],
+            'prediction-result',
+            'prediction'
+        );
     }
 
-    public function numerology(Request $request) {
-        $response = Http::withHeaders([
-            'Content-Type' => 'application/json'
-        ])->post('http://127.0.0.1:5000/api/numerology', [
-            'name'   => $request->input('name'),
-            'dob'    => $request->input('dob'),
-            'tob'    => $request->input('tob'),
-            'place'  => $request->input('place'),
-        ]);
-
-        if (!$response->successful()) {
-            return back()->withErrors(['api' => 'Numerology.']);
-        }
-
-        $data = $response->json();
-
-        return view('numerology-result', ['data' => $data]);
+    public function numerology(Request $request)
+    {
+        return $this->callApi(
+            $request,
+            'numerology',
+            ['name', 'dob', 'tob', 'place'],
+            'numerology-result',
+            'numerology'
+        );
     }
 
-    public function nakshatra(Request $request) {
-        $response = Http::withHeaders([
-            'Content-Type' => 'application/json'
-        ])->post('http://127.0.0.1:5000/api/nakshatra', [
-            'dob' => $request->input('dob'),
-            'tob' => $request->input('tob'),
-            'place' => $request->input('place'),
-        ]);
-
-        if(!$response->successful()) {
-            return back()->withErrors(['api', 'Nakshatra.']);
-        }
-
-        $data = $response->json();
-
-        return view('nakshatra-result', ['data' => $data]);
+    public function nakshatra(Request $request)
+    {
+        return $this->callApi(
+            $request,
+            'nakshatra',
+            ['dob', 'tob', 'place'],
+            'nakshatra-result',
+            'nakshatra'
+        );
     }
 
-    public function health(Request $request) {
-        $response = Http::withHeaders([
-            'Content-Type' => 'application/json'
-        ])->post('http://127.0.0.1:5000/api/health', [
-            'dob' => $request->input('dob'),
-            'tob' => $request->input('tob'),
-            'place' => $request->input('place'),
-        ]);
-
-        if(!$response->successful()) {
-            return back()->withErrors(['api', 'Health']);
-        }
-
-        $data = $response->json();
-
-       return view('health-result', ['health_index' => $data['health_index'] ?? 0]);
-
+    public function health(Request $request)
+    {
+        return $this->callApi(
+            $request,
+            'health',
+            ['dob', 'tob', 'place'],
+            'health-result',
+            'health',
+            'health_index'
+        );
     }
 
-    public function love(Request $request) {
-        $response = Http::withHeaders([
-            'Content-Type' => 'application/json'
-        ])->post('http://127.0.0.1:5000/api/love', [
-            'name' => $request->input('name'),
-            'dob' => $request->input('dob'),
-            'tob' => $request->input('tob'),
-            'place' => $request->input('place'),
-            'gender' => $request->input('gender')
-        ]);
-
-        if(!$response->successful()) {
-            return back()->withErrors(['api', 'love']);
-        }
-
-        $data = $response->json();
-
-        return view('love-result', ['data' => $data]);
+    public function love(Request $request)
+    {
+        return $this->callApi(
+            $request,
+            'love',
+            ['name', 'dob', 'tob', 'place', 'gender'],
+            'love-result',
+            'love'
+        );
     }
+
+    public function gemstone(Request $request)
+    {
+        return $this->callApi(
+            $request,
+            'gemstone',
+            ['name', 'dob', 'tob', 'place'],
+            'gemstone-result',
+            'gemstone'
+        );
+    }
+
+    public function career(Request $request) 
+    {
+        return $this->callApi(
+            $request,
+            'career',
+            ['name', 'dob', 'tob', 'place', 'gender'],
+            'career-result',
+            'career'
+        );
+    }
+
+    public function kalsarp(Request $request)
+    {
+        return $this->callApi(
+            $request,
+            'kalsarp',
+            ['name', 'dob', 'tob', 'place'],
+            'kalsarp-result',
+            'kalsarp'
+        );
+    }
+
+    public function mangal(Request $request)
+    {
+        return $this->callApi(
+            $request,
+            'mangal',
+            ['name', 'dob', 'tob', 'place'],
+            'mangal-result',
+            'mangal'
+        );
+    }
+
+    public function ascendant(Request $request)
+    {
+        return $this->callApi(
+            $request,
+            'ascendant',
+            ['name', 'dob', 'tob', 'place'],
+            'ascendant-result',
+            'ascendant'
+        );
+    }
+
+    public function gochar(Request $request)
+    {
+        return $this->callApi(
+            $request,
+            'transit',
+            ['name', 'dob', 'tob', 'place'],
+            'transit-result',
+            'transit'
+        );
+    }
+
     
 }
