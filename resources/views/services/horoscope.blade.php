@@ -4,9 +4,34 @@
 
 @section('content')
 
+<!--Breadcrumb start-->
+<div class="ast_pagetitle">
+    <div class="ast_img_overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="page_title">
+                    <h2>horoscope services</h2>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">home</a></li>
+                    <li>//</li>
+                    <li><a href="services.html">services</a></li>
+                    <li>//</li>
+                    <li><a href="services.html">match horoscope services</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Breadcrumb end-->
+
+
     <div class="min-h-screen flex items-center justify-center p-6">
-        <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
-            <h2 class="text-2xl font-bold text-center text-indigo-700 mb-6">Match My Horoscope</h2>
+        <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-2xl">
+            <h2 class="text-2xl font-bold text-center text-black-700 mb-6">Match My Horoscope</h2>
 
             <form class="space-y-4">
                 <div>
@@ -40,7 +65,7 @@
 
 
                 <button type="submit"
-                    class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-md" id="Submit">
+                    class="w-full ast_btn" id="Submit">
                     Match Horoscope
                 </button>
             </form>

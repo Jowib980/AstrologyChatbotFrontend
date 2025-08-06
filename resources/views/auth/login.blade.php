@@ -210,7 +210,7 @@
                 if (response.ok) {
                     // Login success
                     localStorage.setItem("user_id", data.user_id); // optional
-                    window.location.href = '/kundali';  // Change this to your actual chatbot page
+                    window.location.href = '/home';  // Change this to your actual chatbot page
                 } else {
                     document.getElementById('login-error').textContent = data.error || 'Invalid credentials';
                     document.getElementById('login-error').classList.remove('hidden');
@@ -257,7 +257,7 @@
                 if (response.ok) {
                     // Login success
                     localStorage.setItem("user_id", data.user.id);
-                    window.location.href = '/kundali';
+                    window.location.href = '/home';
                 } else {
                     document.getElementById('register-error').textContent = response.message || 'Registration failed';
                     document.getElementById('register-error').classList.remove('hidden');

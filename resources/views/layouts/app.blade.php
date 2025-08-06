@@ -20,6 +20,34 @@
 
       <!-- Google Font: Source Sans Pro -->
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+      <!-- theme css start -->
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('theme/css/animate.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('theme/css/bootstrap.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('theme/css/font-awesome.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('theme/css/fonts.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('theme/css/owl.carousel.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('theme/css/owl.theme.default.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('theme/css/magnific-popup.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('theme/css/style.css') }}">
+        <!-- Favicon Link -->
+        <link rel="shortcut icon" type="image/png" href="{{ asset('theme/images/header/favicon.png') }}">
+        <!-- Facebook Pixel Code -->
+        <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1624167494576352');
+        fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1624167494576352&ev=PageView&noscript=1"
+        /></noscript>
+
+      <!-- theme css end -->
     
     </head>
     <body class="font-sans antialiased">
@@ -34,10 +62,10 @@
             @endisset
 
             <!-- Page Content -->
-            <main class="sm:ml-64 pt-20">   
+            <main>   
                 @include('layouts.partials.header')
-                @include('layouts.partials.sidebar')
                 @yield('content')
+                @include('layouts.partials.footer')
             </main>
         </div>
         
@@ -47,6 +75,21 @@
         <script src="https://unpkg.com/flowbite@2.3.0/dist/flowbite.min.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.min.js"></script>
+
+        <!-- theme js start -->
+
+
+        <!--Main js file Style--> 
+        <script type="text/javascript" src="{{ asset('theme/js/jquery.js') }}"></script> 
+        <script type="text/javascript" src="{{ asset('theme/js/bootstrap.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('theme/js/jquery.magnific-popup.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('theme/js/owl.carousel.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('theme/js/jquery.countTo.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('theme/js/jquery.appear.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('theme/js/custom.js') }}"></script>
+        <!--Main js file End-->
+
+        <!-- theme js end -->
 
     </body>
 

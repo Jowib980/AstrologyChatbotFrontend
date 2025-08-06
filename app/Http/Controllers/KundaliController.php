@@ -36,7 +36,7 @@ class KundaliController extends Controller
             $request,
             'kundali',
             ['name', 'gender', 'dob', 'tob', 'place'],
-            'kundali_result',
+            'services.kundali_result',
             'kundali'
         );
     }
@@ -47,7 +47,7 @@ class KundaliController extends Controller
             $request,
             'predict_character',
             ['name', 'dob', 'tob', 'place'],
-            'prediction-result',
+            'services.prediction-result',
             'prediction'
         );
     }
@@ -58,7 +58,7 @@ class KundaliController extends Controller
             $request,
             'numerology',
             ['name', 'dob', 'tob', 'place'],
-            'numerology-result',
+            'services.numerology-result',
             'numerology'
         );
     }
@@ -69,7 +69,7 @@ class KundaliController extends Controller
             $request,
             'nakshatra',
             ['dob', 'tob', 'place'],
-            'nakshatra-result',
+            'services.nakshatra-result',
             'nakshatra'
         );
     }
@@ -80,7 +80,7 @@ class KundaliController extends Controller
             $request,
             'health',
             ['dob', 'tob', 'place'],
-            'health-result',
+            'services.health-result',
             'health',
             'health_index'
         );
@@ -92,7 +92,7 @@ class KundaliController extends Controller
             $request,
             'love',
             ['name', 'dob', 'tob', 'place', 'gender'],
-            'love-result',
+            'services.love-result',
             'love'
         );
     }
@@ -103,7 +103,7 @@ class KundaliController extends Controller
             $request,
             'gemstone',
             ['name', 'dob', 'tob', 'place'],
-            'gemstone-result',
+            'services.gemstone-result',
             'gemstone'
         );
     }
@@ -114,7 +114,7 @@ class KundaliController extends Controller
             $request,
             'career',
             ['name', 'dob', 'tob', 'place', 'gender'],
-            'career-result',
+            'services.career-result',
             'career'
         );
     }
@@ -125,7 +125,7 @@ class KundaliController extends Controller
             $request,
             'kalsarp',
             ['name', 'dob', 'tob', 'place'],
-            'kalsarp-result',
+            'services.kalsarp-result',
             'kalsarp'
         );
     }
@@ -136,7 +136,7 @@ class KundaliController extends Controller
             $request,
             'mangal',
             ['name', 'dob', 'tob', 'place'],
-            'mangal-result',
+            'services.mangal-result',
             'mangal'
         );
     }
@@ -147,7 +147,7 @@ class KundaliController extends Controller
             $request,
             'ascendant',
             ['name', 'dob', 'tob', 'place'],
-            'ascendant-result',
+            'services.ascendant-result',
             'ascendant'
         );
     }
@@ -158,7 +158,7 @@ class KundaliController extends Controller
             $request,
             'transit',
             ['name', 'dob', 'tob', 'place'],
-            'transit-result',
+            'services.transit-result',
             'transit'
         );
     }
