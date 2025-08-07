@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'Services')
 
 @section('content')
 
@@ -29,7 +29,7 @@
     <div class="ast_service_wrapper ast_toppadder70 ast_bottompadder50">
         <div class="container">
             <div class="row">
-                <div class="grid grid-cols-3 gap-2">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
 
                     @php
                         $cards = [
@@ -144,6 +144,7 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const userData = {
+        user_id: localStorage.getItem("user_id"),
         name: localStorage.getItem("username"),
         dob: localStorage.getItem("userdob"),
         tob: localStorage.getItem("birthtime"),
@@ -154,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function createAndSubmitForm(route, fields) {
         for (let f of fields) {
             if (!userData[f]) {
-                alert("Missing user data. Please fill the form first.");
+                alert("Please login first.");
                 return;
             }
         }

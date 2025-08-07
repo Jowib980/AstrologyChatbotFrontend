@@ -206,43 +206,6 @@
 	</div>
 </div>
 <!--Horoscope End-->
-<!--Searchbox Start-->
-<div class="ast_searchbox_wrapper horoscope_search ast_toppadder70 ast_bottompadder70">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-12">
-			<div class="ast_search_box">
-				<h1>get free horoscope</h1>
-				<div class="row">
-					<div class="col-lg-2 col-md-3 col-sm-6 col-12">
-					<input type="text" placeholder="Name">
-					</div>
-					<div class="col-lg-2 col-md-3 col-sm-6 col-12">
-						<input type="text" placeholder="Email">
-					</div>
-					<div class="col-lg-2 col-md-3 col-sm-6 col-12">
-						<input type="text" placeholder="Mobile Number">
-					</div>
-					<div class="col-lg-2 col-md-3 col-sm-6 col-12">
-						<input type="text" placeholder="Date of Birth">
-					</div>
-					<div class="col-lg-2 col-md-3 col-sm-6 col-12">
-						<select>
-							<option value="male">Male</option>
-							<option value="female">Female</option>
-						</select>
-					</div>
-					<div class="col-lg-2 col-md-3 col-sm-6 col-12">
-						<!-- <button type="submit" class="ast_btn">Get now</button> -->
-						<a href="appointment.html" class="ast_btn">Get now</a>
-					</div>
-				</div>
-			</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!--Searchbox End-->
 <!--Services Start-->
 <div class="ast_service_wrapper ast_toppadder70 ast_bottompadder50">
 	<div class="container">

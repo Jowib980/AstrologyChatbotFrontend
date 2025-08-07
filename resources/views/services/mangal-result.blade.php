@@ -4,12 +4,39 @@
 
 @section('content')
 
-	<div class="min-h-screen p-6 flex justify-center items-center">
-        <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-4xl">
-        	<h2 class="text-2xl font-semibold text-center text-indigo-700 mb-4">Mangal Dosha</h2>
+<!--Breadcrumb start-->
+<div class="ast_pagetitle">
+    <div class="ast_img_overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="page_title">
+                    <h2>Mangal services</h2>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">home</a></li>
+                    <li>//</li>
+                    <li><a href="services.html">services</a></li>
+                    <li>//</li>
+                    <li><a href="services.html">mangal services</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Breadcrumb end-->
 
+
+<div class="ast_blog_wrapper ast_toppadder80 ast_bottompadder80">
+    <div class="container">
+        <div class="row">
+            <div class="ast_heading">
+                <h1><span>Mangal Dosha</span></h1>
+            </div>
+        	
             <div class="space-y-4 text-lg text-gray-800 mt-4">
-                <strong class="text-xl">Mangal Dosha</strong>
                 <div class="flex flex-start">
                    
                     <img src="{{asset('/images/ic_mangal_dosh.png')}}" class="card-image" />
@@ -31,29 +58,36 @@
 
                     <h3 class="text-2xl font-semibold mb-2">Some Remedies (in case Mangal Dosha is present)</h3>
 
-                    <p class="mt-2"><strong>Remedies (needs to be performed before marriage)</strong></p>
+                    <div class="bg-white shadow rounded-xl p-4">
+                        <p class="mt-2"><strong>Remedies (needs to be performed before marriage)</strong></p>
 
-                    <p>Kumbha Vivah, Vishnu Vivah and Ashwatha Vivah are the most popular remedies for Mangal Dosha. Ashwatha vivaha means the marriage with peepal or banana tree and cutting the tree after that. Kumbha Vivah, also called Ghata Vivaha, means marriage with a pot and breaking it after that.</p>
+                        <p>Kumbha Vivah, Vishnu Vivah and Ashwatha Vivah are the most popular remedies for Mangal Dosha. Ashwatha vivaha means the marriage with peepal or banana tree and cutting the tree after that. Kumbha Vivah, also called Ghata Vivaha, means marriage with a pot and breaking it after that.</p>
+                    </div>
 
-                    <p class="mt-2"><strong>Remedies (can be performed after marriage)</strong></p>
+                    <div class="bg-white shadow rounded-xl p-4">
+                        <p class="mt-2"><strong>Remedies (can be performed after marriage)</strong></p>
 
-                    <ul>
-                        <li>- Keep Kesariya Ganapati (Orange coloured idol of Lord Ganesha) in worship room and worship daily.</li>
-                        <li>- Worship Lord Hanuman by reciting Hanuman Chalisa daily.</li>
-                        <li>- Mahamrityunjaya paath (recitation of Mahamrityunjaya mantra).</li>
-                    </ul>
+                        <ul>
+                            <li>- Keep Kesariya Ganapati (Orange coloured idol of Lord Ganesha) in worship room and worship daily.</li>
+                            <li>- Worship Lord Hanuman by reciting Hanuman Chalisa daily.</li>
+                            <li>- Mahamrityunjaya paath (recitation of Mahamrityunjaya mantra).</li>
+                        </ul>
+                    </div>
 
-                    <p class="mt-2"><strong>Remedies (based on Lal Kitab, can be performed after marriage)</strong></p>
+                    <div class="bg-white shadow rounded-xl p-4">
+                        <p class="mt-2"><strong>Remedies (based on Lal Kitab, can be performed after marriage)</strong></p>
 
-                    <ul>
-                        <li>- Feed birds with something sweet.</li>
-                        <li>- Keep ivory (Haathi Daant) at home.</li>
-                        <li>- Worship banyan tree with milk mixed with something sweet.</li>
-                    </ul>
+                        <ul>
+                            <li>- Feed birds with something sweet.</li>
+                            <li>- Keep ivory (Haathi Daant) at home.</li>
+                            <li>- Worship banyan tree with milk mixed with something sweet.</li>
+                        </ul>
+                    </div>
 
                     <p class="mt-2"><strong>Note :</strong> We strongly recommend you to consult an astrologer before performing these remedies by your own.</p>
             </div>
         </div>
     </div>
+</div>
 
 @endsection

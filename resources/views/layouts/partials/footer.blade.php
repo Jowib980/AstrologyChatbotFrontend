@@ -28,7 +28,7 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="ast_footer_info">
-					<img src="https://dummyimage.com/160x64" alt="Logo">
+					<img src="{{ asset('theme/images/content/logo.png') }}" alt="Logo">
 					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
 					<ul>
 						<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>					

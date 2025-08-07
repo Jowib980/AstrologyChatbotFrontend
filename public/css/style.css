@@ -278,9 +278,7 @@ body {
         }
 
         @media (max-width: 768px) {
-            .container {
-                height: 100dvh;
-            }
+            
 
             .header-title h1 {
                 font-size: 1.25rem;
@@ -389,4 +387,38 @@ body {
 .circle-progress {
     height: 100px;
     margin: auto;
+}
+
+.stroke-current {
+    color: #ff6f00;
+}
+
+.mfp-wrap.mfp-close-btn-in.mfp-auto-cursor.my-mfp-zoom-in.mfp-ready {
+    height: 500px !important;
+}
+
+/* Mobile view: hide top header and show login/signup in menu */
+@media only screen and (max-width: 768px) {
+  .ast_top_header {
+    display: none !important;
+  }
+
+  .ast_main_menu_hide {
+    display: block !important;
+  }
+}
+
+/* By default, hide login/signup section in the main menu (for desktop) */
+.ast_main_menu_hide {
+  display: none;
+}
+
+.menu_fixed.ast_header_bottom {
+    margin-top: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100px !important;
+}
+
+.ast_contact_info span i {
+    margin-top: 20px !important;
 }

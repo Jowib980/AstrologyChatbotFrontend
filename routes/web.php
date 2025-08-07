@@ -22,6 +22,10 @@ Route::get('/about', function () {
     return view('pages.about');
 });
 
+Route::get('/contact', function () {
+    return view('pages.contact');
+});
+
 Route::get('/search-city', [LocationController::class, 'search'])->name('city');
 
 Route::post('/kundali', [KundaliController::class, 'submit'])->name('submit.kundali');

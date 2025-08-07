@@ -35,7 +35,7 @@ class KundaliController extends Controller
         return $this->callApi(
             $request,
             'kundali',
-            ['name', 'gender', 'dob', 'tob', 'place'],
+            ['name', 'gender', 'dob', 'tob', 'place', 'user_id'],
             'services.kundali_result',
             'kundali'
         );
@@ -46,7 +46,7 @@ class KundaliController extends Controller
         return $this->callApi(
             $request,
             'predict_character',
-            ['name', 'dob', 'tob', 'place'],
+            ['name', 'dob', 'tob', 'place', 'user_id'],
             'services.prediction-result',
             'prediction'
         );
@@ -57,7 +57,7 @@ class KundaliController extends Controller
         return $this->callApi(
             $request,
             'numerology',
-            ['name', 'dob', 'tob', 'place'],
+            ['name', 'dob', 'tob', 'place', 'user_id'],
             'services.numerology-result',
             'numerology'
         );
@@ -68,7 +68,7 @@ class KundaliController extends Controller
         return $this->callApi(
             $request,
             'nakshatra',
-            ['dob', 'tob', 'place'],
+            ['dob', 'tob', 'place', 'user_id'],
             'services.nakshatra-result',
             'nakshatra'
         );
@@ -79,7 +79,7 @@ class KundaliController extends Controller
         return $this->callApi(
             $request,
             'health',
-            ['dob', 'tob', 'place'],
+            ['dob', 'tob', 'place', 'user_id'],
             'services.health-result',
             'health',
             'health_index'
@@ -91,7 +91,7 @@ class KundaliController extends Controller
         return $this->callApi(
             $request,
             'love',
-            ['name', 'dob', 'tob', 'place', 'gender'],
+            ['name', 'dob', 'tob', 'place', 'gender', 'user_id'],
             'services.love-result',
             'love'
         );
@@ -102,7 +102,7 @@ class KundaliController extends Controller
         return $this->callApi(
             $request,
             'gemstone',
-            ['name', 'dob', 'tob', 'place'],
+            ['name', 'dob', 'tob', 'place', 'user_id'],
             'services.gemstone-result',
             'gemstone'
         );
@@ -113,7 +113,7 @@ class KundaliController extends Controller
         return $this->callApi(
             $request,
             'career',
-            ['name', 'dob', 'tob', 'place', 'gender'],
+            ['name', 'dob', 'tob', 'place', 'gender', 'user_id'],
             'services.career-result',
             'career'
         );
@@ -124,7 +124,7 @@ class KundaliController extends Controller
         return $this->callApi(
             $request,
             'kalsarp',
-            ['name', 'dob', 'tob', 'place'],
+            ['name', 'dob', 'tob', 'place', 'user_id'],
             'services.kalsarp-result',
             'kalsarp'
         );
@@ -135,7 +135,7 @@ class KundaliController extends Controller
         return $this->callApi(
             $request,
             'mangal',
-            ['name', 'dob', 'tob', 'place'],
+            ['name', 'dob', 'tob', 'place', 'user_id'],
             'services.mangal-result',
             'mangal'
         );
@@ -146,7 +146,7 @@ class KundaliController extends Controller
         return $this->callApi(
             $request,
             'ascendant',
-            ['name', 'dob', 'tob', 'place'],
+            ['name', 'dob', 'tob', 'place', 'user_id'],
             'services.ascendant-result',
             'ascendant'
         );
@@ -157,7 +157,7 @@ class KundaliController extends Controller
         return $this->callApi(
             $request,
             'transit',
-            ['name', 'dob', 'tob', 'place'],
+            ['name', 'dob', 'tob', 'place', 'user_id'],
             'services.transit-result',
             'transit'
         );

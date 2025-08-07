@@ -3,98 +3,230 @@
 @section('title', 'Numerology')
 
 @section('content')
-<div class="min-h-screen p-6 flex justify-center items-center bg-gray-100">
-    <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-4xl">
-        <h2 class="text-3xl font-bold text-center text-indigo-700 mb-8">Numerology Report</h2>
 
-        {{-- Basic Info --}}
-        <div class="mb-6 space-y-2">
-            <p><strong>Name:</strong> {{ $data['name'] }}</p>
-            <p><strong>Date of Birth:</strong> {{ $data['dob'] }}</p>
-        </div>
 
-        {{-- Core Numbers --}}
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            <div class="bg-indigo-50 p-4 rounded-xl">
-                <h3 class="font-semibold text-lg text-indigo-600 mb-1">Radical Number: {{ $data['radical_number'] }}</h3>
-                <p class="text-sm text-gray-700">{{ $data['radical_meaning'] }}</p>
+<!--Breadcrumb start-->
+<div class="ast_pagetitle">
+    <div class="ast_img_overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="page_title">
+                    <h2>Life Prediction services</h2>
+                </div>
             </div>
-            <div class="bg-indigo-50 p-4 rounded-xl">
-                <h3 class="font-semibold text-lg text-indigo-600 mb-1">Destiny Number: {{ $data['destiny_number'] }}</h3>
-                <p class="text-sm text-gray-700">{{ $data['destiny_meaning'] }}</p>
-            </div>
-            <div class="bg-indigo-50 p-4 rounded-xl">
-                <h3 class="font-semibold text-lg text-indigo-600 mb-1">Name Number: {{ $data['name_number'] }}</h3>
-                <p class="text-sm text-gray-700">{{ $data['name_meaning'] }}</p>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">home</a></li>
+                    <li>//</li>
+                    <li><a href="services.html">services</a></li>
+                    <li>//</li>
+                    <li><a href="services.html">Life Prediction services</a></li>
+                </ul>
             </div>
         </div>
+    </div>
+</div>
+<!--Breadcrumb end-->
 
-        {{-- Personality & Career --}}
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            <div class="bg-green-50 p-4 rounded-xl">
-                <h3 class="font-semibold text-lg text-green-600 mb-2">Personality Traits</h3>
-                <p class="text-sm text-gray-700">{{ $data['numerology_attributes']['personality'] }}</p>
+
+<div class="ast_blog_wrapper ast_toppadder80 ast_bottompadder80">
+    <div class="container">
+        <div class="row">
+
+             {{-- Basic Info --}}
+            <div class="mb-4 space-y-2">
+                <div class="ast_heading">
+                    <h1><span>What is Numerology?</span></h1>
+                </div>
+                <p>Numerology is a belief system that assigns symbolic meanings to numbers and studies their potential influence on a person's life and events. It's a form of divination that uses numbers derived from a person's name and birthdate to gain insights into their personality, relationships, and future. Essentially, it's the study of numbers and their alleged relationship to human behavior and occurrences.Numerology is based on the idea that numbers have inherent vibrations and energies that can be used to understand and predict aspects of life. </p>
             </div>
-            <div class="bg-yellow-50 p-4 rounded-xl">
-                <h3 class="font-semibold text-lg text-yellow-600 mb-2">Career Suggestions</h3>
-                <p class="text-sm text-gray-700">{{ $data['numerology_attributes']['career'] }}</p>
+
+            <h2 class="text-3xl font-bold text-center text-black-700 mb-8">Numerology Report</h2>
+
+            {{-- Core Numbers --}}
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div class="bg-gray-50 p-4 rounded-xl">
+                   <div class="ast_horoscope_box">
+                        <a href="horoscopes_single.html">
+                            <span><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                                <g>
+                                    <path d="M27.425,5.235l0.242,0.551l-2.558,1.118c-0.229-0.932,0.61-1.225-0.244-3.001c-0.94-1.96-4.292-0.58-5.604-3.903
+                                    c-0.006,0.033-0.01,0.06-0.016,0.091l-0.02-0.075l-1.149,4.271l-0.729,0.147l-0.043-0.666l-0.585,0.699l-0.442-0.653l-0.367,0.839
+                                    l-0.787-0.666l0.259,0.919l-0.992-0.047l0.56,0.547c0,0-0.956,0.268-1.004,0.28c-0.048,0.014,0.621,0.453,0.621,0.453L13.92,6.672
+                                    L14.55,6.9l-0.785,0.623l0.905,0.202l-0.471,0.693l0.673,0.022l0.01,0.97l0.857-0.513c0.312,0.261,0.618,0.408,0.574,0.535
+                                    c-0.025,0.074,0.379,0.809-0.224,0.813c-0.602,0.004-0.819-0.074-0.963,0.306l-0.006,0.002l0.004,0.002
+                                    c-0.008,0.024-0.022,0.037-0.029,0.063c-0.157,0.728,1.258,4.675,0.902,5.201c-0.17,0.25-0.889,0.077-3.129,0.046
+                                    c-2.24-0.032-3.731,0.578-4.146,0.071c0,0-0.498-1.505-2.616-0.924c-2.119,0.581,0.021,5.83-4.078,4.94
+                                    c4.643,5.106,4.993-3.152,6.297-2.101c1.305,1.053,0.493,2.055,0.089,2.368c-0.404,0.312-0.946,0.712-1.359,1.147
+                                    c-0.412,0.438-0.253,3.822-0.483,4.297s-0.794,0.662-0.794,0.662s0.126,0.492,0.258,1.417c1.173,0.671,1.377-0.509,1.408-0.882
+                                    c0.029-0.373,0.363-4.283,0.751-4.721c0.387-0.436,1.62-0.438,1.62-0.438s0.522,1.479,0.365,2.095
+                                    c-0.159,0.618-1.51,3.14-0.979,3.976c0.532,0.836,0.399,3.623,0.59,3.623c0.191,0,1.021,0.028,1.787,0.028
+                                    c0.307-0.729-0.662-1.253-0.662-1.253s-0.348-2.542-0.48-2.96c-0.253-0.791,0.994-3.621,1.343-4.286
+                                    c0.349-0.664,3.67-0.48,4.964-0.371c1.295,0.107,2.41,4,2.41,4S17.829,31.438,18.095,32c0.192,0,1.438-0.049,1.92,0
+                                    c0.377-0.688-0.641-1.354-0.641-1.354l0.977-4.045c0,0-0.176-2.947-0.836-3.936c1.176,0.834,3.363-0.389,4.056-0.207
+                                    c0.688,0.182,0.601,3.15,0.378,3.341s-0.536,0.718-0.536,0.718s0.484,0.961,0.752,1.5c1.048-0.154,0.581-1.49,0.581-1.49
+                                    s0.4-3.851,0.256-4.467c-0.146-0.617-3.598-1.091-3.598-1.091s0.107-3.886-0.616-4.468c-0.385-0.309-0.653-1.891-0.627-3.413
+                                    l6.351,3.479l-0.244-0.618c-0.885-2.804,1.932-4.257,1.185-6.146c-0.801-2.022-1.672-1.302-2.194-2.5
+                                    c-0.004-0.004-0.006-0.009-0.008-0.013l0.004-0.001c-0.004-0.011-0.011-0.024-0.017-0.036l2.581-1.128l0.346,0.79l1.809-1.935
+                                    L27.425,5.235z M19.317,1.799c0.723,1.809,3.717,1.339,4.292,2.654c0.632,1.445,0.114,1.794,0.446,2.911l-0.041,0.019
+                                    c-1.416,0.508-5.394,2.153-5.52,2.164c0-0.001,0.244-0.076,0-0.002c-0.244,0.075-0.097-0.514-0.049-0.563
+                                    c0.895-0.222,1.113-0.331,0.723-0.885c0.021-0.033,0.15-0.181,0.164-0.263c0.014-0.083-0.07-0.08-0.07-0.08s0.06-0.014,0.082-0.094
+                                    c0.023-0.078-0.168-0.31-0.168-0.31s0.278-0.146,0.312-0.275c0.033-0.129-0.738-0.643-0.751-0.771
+                                    c-0.015-0.127,0.067-0.214,0.088-0.252c0.019-0.038-0.019-0.369-0.479-0.779L19.317,1.799z M26.19,10.355
+                                    c0.583,1.331-1.864,3.238-0.936,5.019l-5.076-2.79c0.074-1.164,0.344-2.202,0.896-2.472c1.343-0.653,2.567-1.71,3.354-1.491
+                                    c0.104-0.015,0.19-0.052,0.268-0.105C25.181,9.056,25.677,9.182,26.19,10.355z"></path>
+                                </g>
+                            </svg></span>
+                            <h4>Radical Number: {{ $data['radical_number'] }}</h4>
+                            <p>{{ $data['radical_meaning'] }}</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-xl">
+                    <div class="ast_horoscope_box">
+                        <a href="horoscopes_single.html">
+                            <span><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                                <g>
+                                    <path d="M27.425,5.235l0.242,0.551l-2.558,1.118c-0.229-0.932,0.61-1.225-0.244-3.001c-0.94-1.96-4.292-0.58-5.604-3.903
+                                    c-0.006,0.033-0.01,0.06-0.016,0.091l-0.02-0.075l-1.149,4.271l-0.729,0.147l-0.043-0.666l-0.585,0.699l-0.442-0.653l-0.367,0.839
+                                    l-0.787-0.666l0.259,0.919l-0.992-0.047l0.56,0.547c0,0-0.956,0.268-1.004,0.28c-0.048,0.014,0.621,0.453,0.621,0.453L13.92,6.672
+                                    L14.55,6.9l-0.785,0.623l0.905,0.202l-0.471,0.693l0.673,0.022l0.01,0.97l0.857-0.513c0.312,0.261,0.618,0.408,0.574,0.535
+                                    c-0.025,0.074,0.379,0.809-0.224,0.813c-0.602,0.004-0.819-0.074-0.963,0.306l-0.006,0.002l0.004,0.002
+                                    c-0.008,0.024-0.022,0.037-0.029,0.063c-0.157,0.728,1.258,4.675,0.902,5.201c-0.17,0.25-0.889,0.077-3.129,0.046
+                                    c-2.24-0.032-3.731,0.578-4.146,0.071c0,0-0.498-1.505-2.616-0.924c-2.119,0.581,0.021,5.83-4.078,4.94
+                                    c4.643,5.106,4.993-3.152,6.297-2.101c1.305,1.053,0.493,2.055,0.089,2.368c-0.404,0.312-0.946,0.712-1.359,1.147
+                                    c-0.412,0.438-0.253,3.822-0.483,4.297s-0.794,0.662-0.794,0.662s0.126,0.492,0.258,1.417c1.173,0.671,1.377-0.509,1.408-0.882
+                                    c0.029-0.373,0.363-4.283,0.751-4.721c0.387-0.436,1.62-0.438,1.62-0.438s0.522,1.479,0.365,2.095
+                                    c-0.159,0.618-1.51,3.14-0.979,3.976c0.532,0.836,0.399,3.623,0.59,3.623c0.191,0,1.021,0.028,1.787,0.028
+                                    c0.307-0.729-0.662-1.253-0.662-1.253s-0.348-2.542-0.48-2.96c-0.253-0.791,0.994-3.621,1.343-4.286
+                                    c0.349-0.664,3.67-0.48,4.964-0.371c1.295,0.107,2.41,4,2.41,4S17.829,31.438,18.095,32c0.192,0,1.438-0.049,1.92,0
+                                    c0.377-0.688-0.641-1.354-0.641-1.354l0.977-4.045c0,0-0.176-2.947-0.836-3.936c1.176,0.834,3.363-0.389,4.056-0.207
+                                    c0.688,0.182,0.601,3.15,0.378,3.341s-0.536,0.718-0.536,0.718s0.484,0.961,0.752,1.5c1.048-0.154,0.581-1.49,0.581-1.49
+                                    s0.4-3.851,0.256-4.467c-0.146-0.617-3.598-1.091-3.598-1.091s0.107-3.886-0.616-4.468c-0.385-0.309-0.653-1.891-0.627-3.413
+                                    l6.351,3.479l-0.244-0.618c-0.885-2.804,1.932-4.257,1.185-6.146c-0.801-2.022-1.672-1.302-2.194-2.5
+                                    c-0.004-0.004-0.006-0.009-0.008-0.013l0.004-0.001c-0.004-0.011-0.011-0.024-0.017-0.036l2.581-1.128l0.346,0.79l1.809-1.935
+                                    L27.425,5.235z M19.317,1.799c0.723,1.809,3.717,1.339,4.292,2.654c0.632,1.445,0.114,1.794,0.446,2.911l-0.041,0.019
+                                    c-1.416,0.508-5.394,2.153-5.52,2.164c0-0.001,0.244-0.076,0-0.002c-0.244,0.075-0.097-0.514-0.049-0.563
+                                    c0.895-0.222,1.113-0.331,0.723-0.885c0.021-0.033,0.15-0.181,0.164-0.263c0.014-0.083-0.07-0.08-0.07-0.08s0.06-0.014,0.082-0.094
+                                    c0.023-0.078-0.168-0.31-0.168-0.31s0.278-0.146,0.312-0.275c0.033-0.129-0.738-0.643-0.751-0.771
+                                    c-0.015-0.127,0.067-0.214,0.088-0.252c0.019-0.038-0.019-0.369-0.479-0.779L19.317,1.799z M26.19,10.355
+                                    c0.583,1.331-1.864,3.238-0.936,5.019l-5.076-2.79c0.074-1.164,0.344-2.202,0.896-2.472c1.343-0.653,2.567-1.71,3.354-1.491
+                                    c0.104-0.015,0.19-0.052,0.268-0.105C25.181,9.056,25.677,9.182,26.19,10.355z"></path>
+                                </g>
+                            </svg></span>
+                            <h4>Destiny Number: {{ $data['destiny_number'] }}</h4>
+                            <p>{{ $data['destiny_meaning'] }}</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-xl">
+                    <div class="ast_horoscope_box">
+                        <a href="horoscopes_single.html">
+                            <span><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                                <g>
+                                    <path d="M27.425,5.235l0.242,0.551l-2.558,1.118c-0.229-0.932,0.61-1.225-0.244-3.001c-0.94-1.96-4.292-0.58-5.604-3.903
+                                    c-0.006,0.033-0.01,0.06-0.016,0.091l-0.02-0.075l-1.149,4.271l-0.729,0.147l-0.043-0.666l-0.585,0.699l-0.442-0.653l-0.367,0.839
+                                    l-0.787-0.666l0.259,0.919l-0.992-0.047l0.56,0.547c0,0-0.956,0.268-1.004,0.28c-0.048,0.014,0.621,0.453,0.621,0.453L13.92,6.672
+                                    L14.55,6.9l-0.785,0.623l0.905,0.202l-0.471,0.693l0.673,0.022l0.01,0.97l0.857-0.513c0.312,0.261,0.618,0.408,0.574,0.535
+                                    c-0.025,0.074,0.379,0.809-0.224,0.813c-0.602,0.004-0.819-0.074-0.963,0.306l-0.006,0.002l0.004,0.002
+                                    c-0.008,0.024-0.022,0.037-0.029,0.063c-0.157,0.728,1.258,4.675,0.902,5.201c-0.17,0.25-0.889,0.077-3.129,0.046
+                                    c-2.24-0.032-3.731,0.578-4.146,0.071c0,0-0.498-1.505-2.616-0.924c-2.119,0.581,0.021,5.83-4.078,4.94
+                                    c4.643,5.106,4.993-3.152,6.297-2.101c1.305,1.053,0.493,2.055,0.089,2.368c-0.404,0.312-0.946,0.712-1.359,1.147
+                                    c-0.412,0.438-0.253,3.822-0.483,4.297s-0.794,0.662-0.794,0.662s0.126,0.492,0.258,1.417c1.173,0.671,1.377-0.509,1.408-0.882
+                                    c0.029-0.373,0.363-4.283,0.751-4.721c0.387-0.436,1.62-0.438,1.62-0.438s0.522,1.479,0.365,2.095
+                                    c-0.159,0.618-1.51,3.14-0.979,3.976c0.532,0.836,0.399,3.623,0.59,3.623c0.191,0,1.021,0.028,1.787,0.028
+                                    c0.307-0.729-0.662-1.253-0.662-1.253s-0.348-2.542-0.48-2.96c-0.253-0.791,0.994-3.621,1.343-4.286
+                                    c0.349-0.664,3.67-0.48,4.964-0.371c1.295,0.107,2.41,4,2.41,4S17.829,31.438,18.095,32c0.192,0,1.438-0.049,1.92,0
+                                    c0.377-0.688-0.641-1.354-0.641-1.354l0.977-4.045c0,0-0.176-2.947-0.836-3.936c1.176,0.834,3.363-0.389,4.056-0.207
+                                    c0.688,0.182,0.601,3.15,0.378,3.341s-0.536,0.718-0.536,0.718s0.484,0.961,0.752,1.5c1.048-0.154,0.581-1.49,0.581-1.49
+                                    s0.4-3.851,0.256-4.467c-0.146-0.617-3.598-1.091-3.598-1.091s0.107-3.886-0.616-4.468c-0.385-0.309-0.653-1.891-0.627-3.413
+                                    l6.351,3.479l-0.244-0.618c-0.885-2.804,1.932-4.257,1.185-6.146c-0.801-2.022-1.672-1.302-2.194-2.5
+                                    c-0.004-0.004-0.006-0.009-0.008-0.013l0.004-0.001c-0.004-0.011-0.011-0.024-0.017-0.036l2.581-1.128l0.346,0.79l1.809-1.935
+                                    L27.425,5.235z M19.317,1.799c0.723,1.809,3.717,1.339,4.292,2.654c0.632,1.445,0.114,1.794,0.446,2.911l-0.041,0.019
+                                    c-1.416,0.508-5.394,2.153-5.52,2.164c0-0.001,0.244-0.076,0-0.002c-0.244,0.075-0.097-0.514-0.049-0.563
+                                    c0.895-0.222,1.113-0.331,0.723-0.885c0.021-0.033,0.15-0.181,0.164-0.263c0.014-0.083-0.07-0.08-0.07-0.08s0.06-0.014,0.082-0.094
+                                    c0.023-0.078-0.168-0.31-0.168-0.31s0.278-0.146,0.312-0.275c0.033-0.129-0.738-0.643-0.751-0.771
+                                    c-0.015-0.127,0.067-0.214,0.088-0.252c0.019-0.038-0.019-0.369-0.479-0.779L19.317,1.799z M26.19,10.355
+                                    c0.583,1.331-1.864,3.238-0.936,5.019l-5.076-2.79c0.074-1.164,0.344-2.202,0.896-2.472c1.343-0.653,2.567-1.71,3.354-1.491
+                                    c0.104-0.015,0.19-0.052,0.268-0.105C25.181,9.056,25.677,9.182,26.19,10.355z"></path>
+                                </g>
+                            </svg></span>
+                            <h4>Name Number: {{ $data['name_number'] }}</h4>
+                            <p>{{ $data['name_meaning'] }}</p>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        {{-- Compatibility --}}
-        <div class="mb-6">
-            <h3 class="font-semibold text-lg text-pink-600 mb-2">Compatible Numbers</h3>
-            <ul class="list-disc list-inside text-sm text-gray-800">
-                @foreach ($data['numerology_attributes']['compatible'] as $num)
-                    <li>{{ $num }}</li>
-                @endforeach
-            </ul>
-        </div>
+            {{-- Personality & Career --}}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div class="ast_service_box">
+                    <h4>Personality Traits</h4>
+                    <p>{{ $data['numerology_attributes']['personality'] }}</p>
+                </div>
+                <div class="ast_service_box">
+                    <h4>Career Suggestions</h4>
+                    <p>{{ $data['numerology_attributes']['career'] }}</p>
+                </div>
+            </div>
 
-        {{-- Dos and Don’ts --}}
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            <div class="bg-blue-50 p-4 rounded-xl">
-                <h3 class="font-semibold text-lg text-blue-600 mb-2">Dos</h3>
-                <ul class="list-disc list-inside text-sm text-gray-800">
+            
+            {{-- Dos and Don’ts --}}
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div class="ast_team_box">
+                    <h4>Dos</h4>
                     @foreach ($data['numerology_attributes']['dos'] as $do)
-                        <li>{{ $do }}</li>
+                        <p>{{ $do }}</p>
                     @endforeach
-                </ul>
-            </div>
-            <div class="bg-red-50 p-4 rounded-xl">
-                <h3 class="font-semibold text-lg text-red-600 mb-2">Don’ts</h3>
-                <ul class="list-disc list-inside text-sm text-gray-800">
+                </div>
+                       
+                <div class="ast_team_box">
+                    <h4>Don’ts</h4>
                     @foreach ($data['numerology_attributes']['donts'] as $dont)
-                        <li>{{ $dont }}</li>
+                        <p>{{ $dont }}</p>
                     @endforeach
-                </ul>
+                </div>
+
+                <div class="ast_team_box">
+                    <h4>Compatible Numbers</h4>
+                    <ul class="list-disc list-inside text-sm text-gray-800">
+                        @foreach ($data['numerology_attributes']['compatible'] as $num)
+                            <li>{{ $num }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+
             </div>
-        </div>
 
-        {{-- Favourable Attributes --}}
-        <h3 class="text-xl font-bold text-indigo-700 mb-4">Favourable Attributes</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-800 mb-6">
-            <p><strong>Favourable Sign:</strong> {{ $data['numerology_attributes']['favourable_sign'] }}</p>
-            <p><strong>Favourable Alphabets:</strong> {{ $data['numerology_attributes']['favourable_alphabets'] }}</p>
-            <p><strong>Gemstone:</strong> {{ $data['numerology_attributes']['gemstone'] }}</p>
-            <p><strong>Favourable Days:</strong> {{ $data['numerology_attributes']['favourable_days'] }}</p>
-            <p><strong>Favourable Numbers:</strong> {{ $data['numerology_attributes']['favourable_number'] }}</p>
-            <p><strong>Favourable Dates:</strong> {{ $data['numerology_attributes']['favourable_dates'] }}</p>
-            <p><strong>Direction:</strong> {{ $data['numerology_attributes']['direction'] }}</p>
-            <p><strong>Auspicious Color:</strong> {{ $data['numerology_attributes']['auspicious_color'] }}</p>
-            <p><strong>Ruling Planet:</strong> {{ $data['numerology_attributes']['ruling_planet'] }}</p>
-            <p><strong>God/Goddess:</strong> {{ $data['numerology_attributes']['god_goddess'] }}</p>
-            <p><strong>Fast Day:</strong> {{ $data['numerology_attributes']['fast'] }}</p>
-            <p><strong>Mantra:</strong> {{ $data['numerology_attributes']['mantra'] }}</p>
-        </div>
+            {{-- Favourable Attributes --}}
+            <div class="ast_team_box">
+                <h3 class="text-xl font-bold text-black-700 mb-4">Favourable Attributes</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-800 mb-6">
+                    <p><strong>Favourable Sign:</strong> {{ $data['numerology_attributes']['favourable_sign'] }}</p>
+                    <p><strong>Favourable Alphabets:</strong> {{ $data['numerology_attributes']['favourable_alphabets'] }}</p>
+                    <p><strong>Gemstone:</strong> {{ $data['numerology_attributes']['gemstone'] }}</p>
+                    <p><strong>Favourable Days:</strong> {{ $data['numerology_attributes']['favourable_days'] }}</p>
+                    <p><strong>Favourable Numbers:</strong> {{ $data['numerology_attributes']['favourable_number'] }}</p>
+                    <p><strong>Favourable Dates:</strong> {{ $data['numerology_attributes']['favourable_dates'] }}</p>
+                    <p><strong>Direction:</strong> {{ $data['numerology_attributes']['direction'] }}</p>
+                    <p><strong>Auspicious Color:</strong> {{ $data['numerology_attributes']['auspicious_color'] }}</p>
+                    <p><strong>Ruling Planet:</strong> {{ $data['numerology_attributes']['ruling_planet'] }}</p>
+                    <p><strong>God/Goddess:</strong> {{ $data['numerology_attributes']['god_goddess'] }}</p>
+                    <p><strong>Fast Day:</strong> {{ $data['numerology_attributes']['fast'] }}</p>
+                    <p><strong>Mantra:</strong> {{ $data['numerology_attributes']['mantra'] }}</p>
+                </div>
+            </div>
 
-        {{-- Name Correction (Optional Future Feature) --}}
-        {{-- @if (isset($data['name_suggestion']))
-        <div class="mt-6 p-4 bg-yellow-100 rounded-xl">
-            <h3 class="font-semibold text-lg text-yellow-800 mb-2">Suggested Name Correction</h3>
-            <p class="text-sm text-gray-700">To align better with your numerology, consider a name change or spelling like: <strong>{{ $data['name_suggestion'] }}</strong></p>
+            {{-- Name Correction (Optional Future Feature) --}}
+            {{-- @if (isset($data['name_suggestion']))
+            <div class="mt-6 p-4 bg-yellow-100 rounded-xl">
+                <h3 class="font-semibold text-lg text-yellow-800 mb-2">Suggested Name Correction</h3>
+                <p class="text-sm text-gray-700">To align better with your numerology, consider a name change or spelling like: <strong>{{ $data['name_suggestion'] }}</strong></p>
+            </div>
+            @endif --}}
         </div>
-        @endif --}}
     </div>
 </div>
 @endsection

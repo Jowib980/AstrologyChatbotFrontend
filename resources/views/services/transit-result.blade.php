@@ -4,19 +4,48 @@
 
 @section('content')
 
-	<div class="min-h-screen p-6 flex justify-center items-center">
-        <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-4xl">
-        	<h2 class="text-2xl font-semibold text-center text-indigo-700 mb-4">Prediction For Transit Today</h2>
 
-            <div class="space-y-4 text-xl text-gray-800">
-                <h3 class="text-xl font-semibold">Transit Chart</h3>
+<!--Breadcrumb start-->
+<div class="ast_pagetitle">
+    <div class="ast_img_overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="page_title">
+                    <h2>transit services</h2>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">home</a></li>
+                    <li>//</li>
+                    <li><a href="services.html">services</a></li>
+                    <li>//</li>
+                    <li><a href="services.html">transit services</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Breadcrumb end-->
+
+
+<div class="ast_blog_wrapper ast_toppadder80 ast_bottompadder80">
+    <div class="container">
+        <div class="row">
+        	<div class="ast_heading">
+                <h1><span>Prediction For Transit Today</span></h1>
+            </div>
+
+            <div class="space-y-4 text-gray-800">
+                <h3 class="text-xl font-semibold text-center">Transit Chart</h3>
                 @if(isset($data['transit_chart_base64']))
                     <img src="data:image/jpeg;base64,{{$data['transit_chart_base64']}}" alt="Transit Chart" style="width: 500px; margin: auto;">
                 @endif
 
                 @foreach($data['transits'] as $item)
-                <p>
-                    <strong>{{ strtoupper($item['planet']) }} is in {{ $item['sign'] }} in your {{ $item['house'] }}th House</strong><br>
+                <p class="bg-white rounded-xl shadow p-4 text-md">
+                    <strong class="text-xl">{{ strtoupper($item['planet']) }} is in {{ $item['sign'] }} in your {{ $item['house'] }}th House</strong><br>
                     {{ $item['interpretation'] }}
                 </p>
                 @endforeach
@@ -24,5 +53,6 @@
             </div>
         </div>
     </div>
+</div>
 
 @endsection
