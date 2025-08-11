@@ -12,16 +12,16 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="page_title">
-                    <h2>Health Index services</h2>
+                    <h2>Love Prediction services</h2>
                 </div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <ul class="breadcrumb">
-                    <li><a href="index.html">home</a></li>
+                    <li><a href="/">home</a></li>
                     <li>//</li>
-                    <li><a href="services.html">services</a></li>
+                    <li><a href="/services">services</a></li>
                     <li>//</li>
-                    <li><a href="services.html">Health Index services</a></li>
+                    <li><a href="#">Love Prediction services</a></li>
                 </ul>
             </div>
         </div>

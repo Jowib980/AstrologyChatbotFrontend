@@ -16,15 +16,16 @@ class KundaliController extends Controller
         }
 
         $response = Http::withHeaders([
-            'Content-Type' => 'application/json'
+            'Content-Type' => 'application/json',
         ])->post("http://127.0.0.1:5000/api/{$endpoint}", $payload);
 
-        if (!$response->successful()) {
-            return back()->withErrors([$errorKey => ucfirst($errorKey) . ' request failed.']);
-        }
+        // if (!$response->successful()) {
+        //     return back()->withErrors([$errorKey => ucfirst($errorKey) . ' request failed.']);
+        // }
 
         $jsonData = $response->json();
         $data = $valueKey ? ($jsonData[$valueKey] ?? null) : $jsonData;
+        // dd($data);
 
         return view($view, ['data' => $data]);
     }
@@ -162,6 +163,35 @@ class KundaliController extends Controller
             'transit'
         );
     }
-
     
+    public function horoscopeResult(Request $request)
+    {
+        $matchId = $request->query('match_id');
+
+        if (!$matchId) {
+            return redirect()->back()->with('error', 'Match ID is missing.');
+        }
+
+        try {
+            $response = Http::get("http://127.0.0.1:5000/api/get_match/{$matchId}");
+
+            if ($response->failed()) {
+                return redirect()->back()->with('error', 'Unable to fetch match data.');
+            }
+
+            $data = $response->json();
+
+            if (!isset($data['status']) || $data['status'] !== 'success') {
+                return redirect()->back()->with('error', $data['message'] ?? 'Error retrieving data.');
+            }
+
+            return view('services.horoscope-result', [
+                'match' => $data['data']
+            ]);
+
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Something went wrong: ' . $e->getMessage());
+        }
+    }
+
 }

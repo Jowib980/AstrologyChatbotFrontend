@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Life Prediction')
+@section('title', 'Mangal ')
+@section('title', 'Mangal Dosh')
 
 @section('content')
 
@@ -16,11 +17,11 @@
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <ul class="breadcrumb">
-                    <li><a href="index.html">home</a></li>
+                    <li><a href="/">home</a></li>
                     <li>//</li>
-                    <li><a href="services.html">services</a></li>
+                    <li><a href="/services">services</a></li>
                     <li>//</li>
-                    <li><a href="services.html">mangal services</a></li>
+                    <li><a href="#">mangal services</a></li>
                 </ul>
             </div>
         </div>
@@ -84,7 +85,7 @@
                         </ul>
                     </div>
 
-                    <p class="mt-2"><strong>Note :</strong> We strongly recommend you to consult an astrologer before performing these remedies by your own.</p>
+                    <p class="mt-4"><strong>Note :</strong> We strongly recommend you to consult an astrologer before performing these remedies by your own.</p>
             </div>
         </div>
     </div>

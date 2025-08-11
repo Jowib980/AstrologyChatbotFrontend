@@ -11,16 +11,16 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="page_title">
-                    <h2>Career services</h2>
+                    <h2>Kalsarp Dosh services</h2>
                 </div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <ul class="breadcrumb">
-                    <li><a href="index.html">home</a></li>
+                    <li><a href="/">home</a></li>
                     <li>//</li>
-                    <li><a href="services.html">services</a></li>
+                    <li><a href="/services">services</a></li>
                     <li>//</li>
-                    <li><a href="services.html">career services</a></li>
+                    <li><a href="#">Kalsarp Dosh services</a></li>
                 </ul>
             </div>
         </div>

@@ -17,11 +17,11 @@
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <ul class="breadcrumb">
-                    <li><a href="index.html">home</a></li>
+                    <li><a href="/">home</a></li>
                     <li>//</li>
-                    <li><a href="services.html">services</a></li>
+                    <li><a href="/services">services</a></li>
                     <li>//</li>
-                    <li><a href="services.html">Life Prediction services</a></li>
+                    <li><a href="#">Life Prediction services</a></li>
                 </ul>
             </div>
         </div>
@@ -36,22 +36,22 @@
         	<h2 class="text-2xl font-semibold text-center text-black-700 mb-4">Your Character, Happiness and Fulfillment, Lifestyle</h2>
 
             <div class="space-y-4 text-lg text-gray-800">
-                <p class="text-gray-500"><strong class="text-black">Lagna:</strong> {{ $data['character_prediction']['lagna'] }}</p>
-                <p class="text-gray-500"><strong class="text-black">Lagna Lord:</strong> {{ $data['character_prediction']['lagna_lord'] }}</p>
+                <p class="text-gray-500"><strong class="text-black">Lagna:</strong> {{ $data['lagna'] }}</p>
+                <p class="text-gray-500"><strong class="text-black">Lagna Lord:</strong> {{ $data['lagna_lord'] }}</p>
                 <p class="text-gray-500"><strong class="text-black">Character:</strong></p>
                 <p class="p-4 rounded-md text-justify shadow text-gray-500">
-                    {{ $data['character_prediction']['character'] }}
+                    {{ $data['character'] }}
                 </p>
                 <br>
                 <p><strong class="text-black">Happiness and Fulfillment:</strong></p>
                 <p class="p-4 rounded-md text-justify shadow text-gray-500">
-                    {{ $data['character_prediction']['happiness'] }}
-                    {{ $data['character_prediction']['fulfillment'] }}
+                    {{ $data['happiness'] }}
+                    {{ $data['fulfillment'] }}
                 </p>
                 <br>
                 <p><strong class="text-black">Lifestyle:</strong></p>
                 <p class="p-4 rounded-md text-justify shadow text-gray-500">
-                    {{ $data['character_prediction']['lifestyle'] }}
+                    {{ $data['lifestyle'] }}
                 </p>
             </div>
         </div>

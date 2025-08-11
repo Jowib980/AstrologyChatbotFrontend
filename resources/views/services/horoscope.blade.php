@@ -4,6 +4,19 @@
 
 @section('content')
 
+
+<div id="loader" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div class="sk-chase">
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+    </div>
+</div>
+
+
 <!--Breadcrumb start-->
 <div class="ast_pagetitle">
     <div class="ast_img_overlay"></div>
@@ -16,11 +29,11 @@
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <ul class="breadcrumb">
-                    <li><a href="index.html">home</a></li>
+                    <li><a href="/">home</a></li>
                     <li>//</li>
-                    <li><a href="services.html">services</a></li>
+                    <li><a href="/services">services</a></li>
                     <li>//</li>
-                    <li><a href="services.html">match horoscope services</a></li>
+                    <li><a href="#">match horoscope services</a></li>
                 </ul>
             </div>
         </div>
@@ -124,6 +137,19 @@
             }
         }
 
+        function showToast(type, message) {
+            Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: type, // 'success', 'error', 'warning', 'info', 'question'
+                title: message,
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true
+            });
+        }
+
+
         function collectFormData(formId) {
             return {
                 user_id : localStorage.getItem("user_id"),
@@ -135,21 +161,26 @@
             };
         }
 
+
         function callMatchAPI(user, partner) {
+            $('#loader').removeClass('hidden');
             $.ajax({
                 url: "http://127.0.0.1:5000/api/match_horoscope",
                 method: "POST",
                 contentType: "application/json",
                 data: JSON.stringify({ user, partner }),
                 success: function (res) {
+                    $('#loader').addClass('hidden');
                     if (res.status === "success") {
-                        window.location.href = `/horoscope-result?data=${encodeURIComponent(JSON.stringify(res))}`;
+                        showToast('success', 'Generate hooscope successfully!');
+                        window.location.href = `/horoscope-result?match_id=${res.match_id}`;
                     } else {
-                        alert("Error: " + res.message);
+                        showToast('error', "Error: " + res.message);
                     }
                 },
                 error: function () {
-                    alert("Server error. Please try again.");
+                    $('#loader').addClass('hidden');
+                   showToast('error', 'Please try again!');
                 }
             });
         }
@@ -165,10 +196,11 @@
                 if (girlData.name) {
                     callMatchAPI(boyData, girlData);
                 } else {
-                    alert("Please fill girl's details too.");
+                    showToast('error', "Please fill girl's details too.");
                 }
             } else if (gender === "female") {
                 const user = {
+                    user_id: localStorage.getItem("user_id"),
                     name: localStorage.getItem("username"),
                     dob: localStorage.getItem("userdob"),
                     tob: localStorage.getItem("birthtime"),
@@ -190,10 +222,11 @@
                 if (boyData.name) {
                     callMatchAPI(boyData, girlData);
                 } else {
-                    alert("Please fill boy's details too.");
+                    showToast('error', "Please fill boy's details too.");
                 }
             } else if (gender === "male") {
                 const user = {
+                    user_id: localStorage.getItem("user_id"),
                     name: localStorage.getItem("username"),
                     dob: localStorage.getItem("userdob"),
                     tob: localStorage.getItem("birthtime"),
@@ -210,7 +243,7 @@
 
             // Simple validation
             if (!boyData.name || !girlData.name) {
-                alert("Please fill both boy and girl details.");
+                showToast('error', "Please fill both boy and girl details.");
                 return;
             }
 

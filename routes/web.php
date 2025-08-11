@@ -36,10 +36,7 @@ Route::get('/services', function () {
 Route::get('/horoscope', function () {
     return view('services.horoscope');
 });
-Route::get('/horoscope-result', function () {
-    $data = json_decode(urldecode(request()->query('data')), true);
-    return view('services.horoscope-result', compact('data'));
-});
+Route::get('/horoscope-result', [KundaliController::class, 'horoscopeResult'])->name('horoscope-result');
 Route::post('/prediction', [KundaliController::class, 'prediction'])->name('submit.prediction');
 Route::get('/numerology', function () {
     return view('services.numerology');

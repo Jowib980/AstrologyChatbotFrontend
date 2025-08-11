@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'About us')
 
 @section('content')
 
@@ -16,9 +16,9 @@
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <ul class="breadcrumb">
-                    <li><a href="index.html">home</a></li>
+                    <li><a href="/">home</a></li>
                     <li>//</li>
-                    <li><a href="about.html">About us</a></li>
+                    <li><a href="/about">About us</a></li>
                 </ul>
             </div>
         </div>
@@ -37,8 +37,8 @@
             <div class="col-lg-7 col-md-7 col-sm-12 col-12">
                 <div class="ast_about_info">
                     <h4>know about astrology</h4>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                    <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.The point of using Lorem Ipsum is that it has a more-or less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English will uncover many web sites still in their infancy.The point of using Lorem Ipsum is that it has a more-or less normal distribution.</p>
+                    <p>Astrology is more than prediction—it’s also a tool for self-discovery. It helps people understand their strengths, weaknesses, emotional patterns, and spiritual purpose. By studying one’s chart, individuals can align their actions with cosmic rhythms, improve relationships, choose favorable times for important events, and navigate challenges with greater awareness.</p>
+                    <p>Astrology also studies the planets and their symbolic meanings. For example, the Sun represents vitality and self-expression, the Moon governs emotions, Mercury influences communication, Venus relates to love and beauty, and Mars signifies action and drive. The slower-moving planets like Jupiter, Saturn, Uranus, Neptune, and Pluto affect long-term trends, generational traits, and major life transformations.</p>
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="ast_heading">
                     <h1>why  <span>choose us</span></h1>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected hummer.</p>
+                    <p>We combine ancient astrological wisdom with modern accuracy to provide clear, personalized, and reliable guidance. Our services are crafted to help you understand your unique cosmic blueprint, make informed life decisions in every aspect of life.</p>
                 </div>
             </div>
             <div class="ast_whywe_info row">
@@ -117,7 +117,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="ast_heading">
                     <h1>now <span>we have</span></h1>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected hummer.</p>
+                    <p>We bring together the wisdom of ancient astrology and the precision of modern calculations to offer you accurate, insightful, and life-changing guidance.</p>
                 </div>
             </div>
             <div class="ast_counter_wrapper row">
@@ -161,7 +161,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="ast_heading">
                     <h1>what client<span> says</span></h1>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected hummer.</p>
+                    <p>We are proud to have touched countless lives through the power of astrology. From accurate predictions to life-changing guidance, our clients share their stories of clarity, confidence, and transformation.</p>
                 </div>
             </div>
             <div class="col-lg-10 col-md-12 col-sm-12 col-12 offset-lg-1 offset-md-0 offset-sm-0 offset-0">
@@ -171,8 +171,8 @@
                         <div class="ast_testimonials_slider_box">
                             <img src="{{ asset('theme/images/content/tm2.jpg') }}" alt="Testimonial">
                             <div class="ast_testimonials_slider_box_text">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or less normal distribution.</p>
-                                <h4>Charlyn Stewart, <span>astrologer</span></h4>
+                                <p>“The birth chart reading I received was incredibly accurate. It felt like the astrologer knew my life inside out. I’ve been able to make better decisions since then.”</p>
+                                <h4>Charlyn Stewart, <span>Astrologer</span></h4>
                             </div>
                         </div>                      
                     </div>
@@ -180,7 +180,7 @@
                         <div class="ast_testimonials_slider_box">
                             <img src="{{ asset('theme/images/content/tm1.jpg') }}"" alt="Testimonial">
                             <div class="ast_testimonials_slider_box_text">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or less normal distribution.</p>
+                                <p>“Their tarot reading brought me so much clarity about my career path. The guidance was spot on, and I feel more confident moving forward.”</p>
                                 <h4>Kenneth Page, <span>tarot reader</span></h4>
                             </div>                  
                         </div>                      
@@ -189,7 +189,7 @@
                         <div class="ast_testimonials_slider_box">
                             <img src="{{ asset('theme/images/content/tm3.jpg') }}"" alt="Testimonial">
                             <div class="ast_testimonials_slider_box_text">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or less normal distribution.</p>
+                                <p>“I was amazed by how detailed and personal my horoscope analysis was. It felt more like a life guide than just a prediction.”</p>
                                 <h4>Louis Robinson, <span>horoscoper</span></h4>
                             </div>
                         </div>
@@ -198,7 +198,7 @@
                         <div class="ast_testimonials_slider_box">
                             <img src="{{ asset('theme/images/content/tm4.jpg') }}"" alt="Testimonial">
                             <div class="ast_testimonials_slider_box_text">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or less normal distribution.</p>
+                                <p>“The counseling session based on my planetary positions gave me new hope in my relationship. It was both comforting and inspiring.”</p>
                                 <h4>Judith Tierney, <span>psychologist</span></h4>
                             </div>
                         </div>

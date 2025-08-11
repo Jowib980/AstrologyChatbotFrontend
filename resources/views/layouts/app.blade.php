@@ -21,6 +21,8 @@
       <!-- Google Font: Source Sans Pro -->
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
+      <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spinkit/2.0.1/spinkit.min.css"> -->
+
       <!-- theme css start -->
 
         <link rel="stylesheet" type="text/css" href="{{ asset('theme/css/animate.css') }}">
@@ -88,6 +90,9 @@
         <script type="text/javascript" src="{{ asset('theme/js/jquery.appear.js') }}"></script>
         <script type="text/javascript" src="{{ asset('theme/js/custom.js') }}"></script>
         <!--Main js file End-->
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
         <!-- theme js end -->
 

@@ -34,7 +34,7 @@
             <div class="col-lg-9 col-md-8 col-sm-12 col-12">
                 <div class="ast_blog_box">
                     <div class="ast_blog_img">
-                        <img src="{{ asset('images/content/horoscopes_single.jpg') }}" alt="Blog" title="Blog">
+                        <img src="{{ asset('theme/images/content/horoscopes_single.jpg') }}" alt="Blog" title="Blog">
                     </div>
                     <div class="ast_blog_info">
                         <h3 class="ast_blog_info_heading">Kundli Chart.</h3>

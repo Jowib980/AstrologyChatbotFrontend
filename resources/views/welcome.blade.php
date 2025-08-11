@@ -36,7 +36,7 @@
 					<li>gemstones</li>
 					<li>numerology</li>
 				</ul>
-				<a href="appointment.html" class="ast_btn">make it now</a>
+				<a href="/services" class="ast_btn">make it now</a>
 			</div>
 		</div>
 	</div>
@@ -49,8 +49,8 @@
 			<div class="col-lg-7 col-md-12 col-sm-12 col-12 order-lg-1 order-md-2 order-sm-2 order-2">
 				<div class="ast_about_info">
 					<h4>know about horoscope</h4>
-					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-					<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.The point of using Lorem Ipsum is that it has a more-or less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English will uncover many web sites still in their infancy.The point of using Lorem Ipsum is that it has a more-or less normal distribution.</p>
+					<p>Astrology is an ancient system of knowledge that studies the relationship between celestial bodies and human life. For thousands of years, civilizations across the world—from India, China, and Babylon to Greece and Egypt—have observed the movements of the Sun, Moon, planets, and stars to gain insight into personality, destiny, and natural events. At its heart, astrology is based on the belief that the positions of these cosmic bodies at the time of a person’s birth influence their traits, emotions, strengths, challenges, and life path.</p>
+					<p>In astrology, the birth chart (or horoscope) is the central tool. It is a map of the sky at the exact moment and location of a person’s birth, divided into 12 sections called houses, each representing different aspects of life—such as career, relationships, health, and spirituality. The zodiac signs—Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, and Pisces—are associated with distinct qualities and ruling planets.</p>
 				</div>
 			</div>
 			<div class="col-lg-5 col-md-12 col-sm-12 col-12 order-lg-2 order-md-1 order-sm-1 order-1">
@@ -76,7 +76,7 @@
 		<div class="row">
 			<div class="col-lg-3 col-md-6 col-sm-6 col-12">
 				<div class="ast_horoscope_box">
-					<a href="horoscopes_single.html">
+					<a href="#">
 					<span><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="31.945px" height="31.944px" viewBox="0 0 31.945 31.944" style="enable-background:new 0 0 31.945 31.944;" xml:space="preserve">
     <g>
         <g>
@@ -101,13 +101,13 @@
     </g>
 </svg></span>
 					<h4>Aries (Mesh)</h4>
-					<p>At vero eos et accusamus et iusto odio dignissimos ducimus...</p>
+					<p>Bold, energetic, and always ready to take the lead.</p>
 					</a>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-12">
 				<div class="ast_horoscope_box">
-					<a href="horoscopes_single.html">
+					<a href="#">
 					<span><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="31.994px" height="31.994px" viewBox="0 0 31.994 31.994" style="enable-background:new 0 0 31.994 31.994;" xml:space="preserve">
     <g>
         <path d="M12.48,11.539c-0.609-0.554-3.646-3.475-6.007-3.99C5.746,5.79,4.888,5.747,4.888,5.747s1.373-3.26-4.032-3.089
@@ -126,13 +126,13 @@
     </g>
 </svg></span>
 					<h4>Taurus (Vrushabh)</h4>
-					<p>At vero eos et accusamus et iusto odio dignissimos ducimus...</p>
+					<p>Steady, loyal, and drawn to comfort and beauty.</p>
 					</a>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-12">
 				<div class="ast_horoscope_box">
-					<a href="horoscopes_single.html">
+					<a href="#">
 					<span><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
     <g>
         <g>
@@ -165,13 +165,13 @@
     </g>
 </svg></span>
 					<h4>Gemini (Mithun)</h4>
-					<p>At vero eos et accusamus et iusto odio dignissimos ducimus...</p>
+					<p>Curious, adaptable, and a master of communication.</p>
 					</a>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-12">
 				<div class="ast_horoscope_box">
-					<a href="horoscopes_single.html">
+					<a href="#">
 					<span><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
     <g>
         <path d="M32,14.824c-3.197,5.81-6.949,5.456-6.949,5.456s7.333-3.475,5.309-9.536c-0.77,4.613-4.938,7.245-4.938,7.245
@@ -196,7 +196,7 @@
     </g>
 </svg></span>
 					<h4>Cancer (Karka)</h4>
-					<p>At vero eos et accusamus et iusto odio dignissimos ducimus...</p>
+					<p>Emotional, nurturing, and deeply connected to home and family.</p>
 					</a>
 				</div>
 			</div>
@@ -213,7 +213,7 @@
 			<div class="col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="ast_heading">
 					<h1>our <span>services</span></h1>
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected hummer.</p>
+					<p>Astrology Services for Your Life’s Journey" or "Comprehensive Astrology Solutions</p>
 				</div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-12">

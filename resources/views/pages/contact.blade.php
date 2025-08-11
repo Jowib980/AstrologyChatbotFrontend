@@ -32,28 +32,28 @@
 			<div class="col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="ast_heading">
 					<h1>get in <span>touch</span></h1>
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected hummer.</p>
+					<p>Have questions about your birth chart, horoscope, or our astrology services? We’re here to guide you every step of the way. </p>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-12">
 				<div class="ast_contact_info">
 					<span><i class="fa fa-phone" aria-hidden="true"></i></span>
 					<h4>phone</h4>
-					<p>+1800 326 3264<br>+1800 326 3234</p>
+					<p>+91 99149 74653</p>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-12">
 				<div class="ast_contact_info">
 					<span><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
 					<h4>email</h4>
-					<p><a href="#">support@website.com</a><br><a href="#">info@website.com</a></p>
+					<p><a href="#">office@jowibtechnologies.com</a></p>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-12">
 				<div class="ast_contact_info">
 					<span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
 					<h4>address</h4>
-					<p>2794, Hayhurst Lane Bloomfield Township, MI 48302</p>
+					<p>Prosperity Square, D-185, Phase 8B, Industrial Area, Sector 74, SAS Nagar, Punjab 160055</p>
 				</div>
 			</div>
 		</div>
@@ -67,7 +67,7 @@
 			<div class="col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="ast_heading">
 					<h1>find & message <span>here</span></h1>
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected hummer.</p>
+					<p>Connect with us today and take the first step toward understanding your true path. Your journey to clarity begins here — let’s talk.</p>
 				</div>
 			</div>
 		</div>
