@@ -1,6 +1,6 @@
  <!-- Download wrapper start-->
-    <div class="ast_download_wrapper ast_toppadder70 ast_bottompadder70">
-        <div class="container">
+    <div class="ast_download_wrapper ast_toppadder70">
+        <!-- <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="ast_heading">
@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 <!-- Download wrapper End-->
 

@@ -4,6 +4,19 @@
 
 @section('content')
 
+
+<div id="loader" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div class="sk-chase">
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+    </div>
+</div>
+
+
 <!--Breadcrumb start-->
 <div class="ast_pagetitle">
 <div class="ast_img_overlay"></div>
@@ -119,8 +132,25 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 	$(document).ready(function () {
+
+
+	    function showToast(type, message) {
+	        Swal.fire({
+	            toast: true,
+	            position: 'top-end',
+	            icon: type, // 'success', 'error', 'warning', 'info', 'question'
+	            title: message,
+	            showConfirmButton: false,
+	            timer: 3000,
+	            timerProgressBar: true
+	        });
+	    }
+
+
 		$('#contact-form').on('submit', function (e) {
 			e.preventDefault();
+
+			$('#loader').removeClass('hidden');
 
 			const formData = {
 				first_name: $('input[name="first_name"]').val(),
@@ -136,11 +166,13 @@
 				contentType: "application/json",
 				data: JSON.stringify(formData),
 				success: function (response) {
-					$('.response').html(`<p style="color:green;">${response.message}</p>`);
+					$('#loader').addClass('hidden');
+					showToast('success', `${response.message}`);
 					$('#contact-form')[0].reset();
 				},
 				error: function (xhr) {
-					$('.response').html(`<p style="color:red;">Something went wrong. Try again.</p>`);
+					$('#loader').addClass('hidden');
+					showToast('error', 'Something went wrong. Please try again later.');
 				}
 			});
 		});

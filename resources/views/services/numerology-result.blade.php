@@ -192,7 +192,7 @@
                 <div class="ast_team_box">
                     <h4>Compatible Numbers</h4>
                     <ul class="list-disc list-inside text-sm text-gray-800">
-                        @foreach ($data['numerology_attributes']['compatible'] as $num)
+                        @foreach ($data['numerology_attributes']['compatibles'] as $num)
                             <li>{{ $num }}</li>
                         @endforeach
                     </ul>

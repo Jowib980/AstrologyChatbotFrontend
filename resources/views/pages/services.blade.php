@@ -41,7 +41,7 @@
     <div class="ast_service_wrapper ast_toppadder70 ast_bottompadder50">
         <div class="container">
             <div class="row">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
 
                     @php
                         $cards = [
@@ -79,24 +79,23 @@
                         @if(isset($card['link']) && $card['link'])
                             <a href="{{ $card['route'] }}">
                         @endif
-                    <div
-                        class="ast_service_box {{ $card['class'] ?? '' }}"
-                        @if(isset($card['id'])) id="{{ $card['id'] }}" @endif
-                        data-route="{{ $card['route'] }}"
-                        data-fields='@json($card['fields'] ?? [])'
-                    >
-                        <div class="">
-                            <img src="{{ asset('images/' . $card['img']) }}" alt="Service" class="card-image">
-                            <h4>{{ $card['title'] }}</h4>
-                            <p>{{ $card['desc'] }}</p>
-                            <div class="clearfix"></div>
+                        <div
+                            class="ast_service_box {{ $card['class'] ?? '' }}"
+                            @if(isset($card['id'])) id="{{ $card['id'] }}" @endif
+                            data-route="{{ $card['route'] }}"
+                            data-fields='@json($card['fields'] ?? [])'
+                        >
+                            <div class="">
+                                <img src="{{ asset('images/' . $card['img']) }}" alt="Service" class="card-image">
+                                <h4>{{ $card['title'] }}</h4>
+                                <p>{{ $card['desc'] }}</p>
+                                <div class="clearfix"></div>
+                            </div>
                         </div>
-                    </div>
-                    @if(isset($card['link']) && $card['link'])
-                        </a>
-                    @endif
-                @endforeach
-
+                        @if(isset($card['link']) && $card['link'])
+                            </a>
+                        @endif
+                    @endforeach
 
                 </div>
             </div>
