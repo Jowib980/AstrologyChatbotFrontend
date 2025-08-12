@@ -102,7 +102,7 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     // Load services from API and render cards
-    axios.get('http://127.0.0.1:5000/api/services')
+    axios.get('https://astrology.jowibtechnologies.com/api/services')
         .then(function (response) {
             let services = response.data;
             let html = '';
