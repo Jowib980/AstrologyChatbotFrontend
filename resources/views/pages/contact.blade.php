@@ -161,7 +161,7 @@
 			};
 
 			$.ajax({
-				url: "http://127.0.0.1:5000/api/contact",
+				url: "https://astrology.jowibtechnologies.com/api/contact",
 				type: "POST",
 				contentType: "application/json",
 				data: JSON.stringify(formData),

@@ -165,7 +165,7 @@
         function callMatchAPI(user, partner) {
             $('#loader').removeClass('hidden');
             $.ajax({
-                url: "http://127.0.0.1:5000/api/match_horoscope",
+                url: "https://astrology.jowibtechnologies.com/api/match_horoscope",
                 method: "POST",
                 contentType: "application/json",
                 data: JSON.stringify({ user, partner }),

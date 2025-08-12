@@ -48,7 +48,7 @@
 		<div class="row">
 			<div class="col-lg-7 col-md-12 col-sm-12 col-12 order-lg-1 order-md-2 order-sm-2 order-2">
 				<div class="ast_about_info">
-					<h4>know about horoscope</h4>
+					<h4>know about horoscope</h4>h
 					<p>Astrology is an ancient system of knowledge that studies the relationship between celestial bodies and human life. For thousands of years, civilizations across the world—from India, China, and Babylon to Greece and Egypt—have observed the movements of the Sun, Moon, planets, and stars to gain insight into personality, destiny, and natural events. At its heart, astrology is based on the belief that the positions of these cosmic bodies at the time of a person’s birth influence their traits, emotions, strengths, challenges, and life path.</p>
 					<p>In astrology, the birth chart (or horoscope) is the central tool. It is a map of the sky at the exact moment and location of a person’s birth, divided into 12 sections called houses, each representing different aspects of life—such as career, relationships, health, and spirituality. The zodiac signs—Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, and Pisces—are associated with distinct qualities and ruling planets.</p>
 				</div>
@@ -196,7 +196,7 @@
 					    </g>
 					</svg></span>
 					<h4>Cancer (Karka)</h4>
-					<p>Emotional, nurturing, and deeply connected to home and family.</p>
+					<p>Emotional, nurturing, and deeply connected to family.</p>
 					</a>
 				</div>
 			</div>

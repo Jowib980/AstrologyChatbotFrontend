@@ -17,7 +17,7 @@ class KundaliController extends Controller
 
         $response = Http::withHeaders([
             'Content-Type' => 'application/json',
-        ])->post("http://127.0.0.1:5000/api/{$endpoint}", $payload);
+        ])->post("https://astrology.jowibtechnologies.com/api/{$endpoint}", $payload);
 
         // if (!$response->successful()) {
         //     return back()->withErrors([$errorKey => ucfirst($errorKey) . ' request failed.']);
@@ -173,7 +173,7 @@ class KundaliController extends Controller
         }
 
         try {
-            $response = Http::get("http://127.0.0.1:5000/api/get_match/{$matchId}");
+            $response = Http::get("https://astrology.jowibtechnologies.com/api/get_match/{$matchId}");
 
             if ($response->failed()) {
                 return redirect()->back()->with('error', 'Unable to fetch match data.');

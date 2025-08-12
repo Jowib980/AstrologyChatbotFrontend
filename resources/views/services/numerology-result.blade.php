@@ -78,8 +78,8 @@
                                     c0.104-0.015,0.19-0.052,0.268-0.105C25.181,9.056,25.677,9.182,26.19,10.355z"></path>
                                 </g>
                             </svg></span>
-                            <h4>Radical Number: {{ $data['radical_number'] }}</h4>
-                            <p>{{ $data['radical_meaning'] }}</p>
+                            <h4>Radical Number: {{ $data['radical_number'] ?? '' }}</h4>
+                            <p>{{ $data['radical_meaning'] ?? '' }}</p>
                         </a>
                     </div>
                 </div>
@@ -116,8 +116,8 @@
                                     c0.104-0.015,0.19-0.052,0.268-0.105C25.181,9.056,25.677,9.182,26.19,10.355z"></path>
                                 </g>
                             </svg></span>
-                            <h4>Destiny Number: {{ $data['destiny_number'] }}</h4>
-                            <p>{{ $data['destiny_meaning'] }}</p>
+                            <h4>Destiny Number: {{ $data['destiny_number'] ?? '' }}</h4>
+                            <p>{{ $data['destiny_meaning'] ?? '' }}</p>
                         </a>
                     </div>
                 </div>
@@ -153,8 +153,8 @@
                                     c0.104-0.015,0.19-0.052,0.268-0.105C25.181,9.056,25.677,9.182,26.19,10.355z"></path>
                                 </g>
                             </svg></span>
-                            <h4>Name Number: {{ $data['name_number'] }}</h4>
-                            <p>{{ $data['name_meaning'] }}</p>
+                            <h4>Name Number: {{ $data['name_number'] ?? '' }}</h4>
+                            <p>{{ $data['name_meaning'] ?? '' }}</p>
                         </a>
                     </div>
                 </div>
@@ -164,11 +164,11 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div class="ast_service_box">
                     <h4>Personality Traits</h4>
-                    <p>{{ $data['numerology_attributes']['personality'] }}</p>
+                    <p>{{ $data['numerology_attributes']['personality'] ?? '' }}</p>
                 </div>
                 <div class="ast_service_box">
                     <h4>Career Suggestions</h4>
-                    <p>{{ $data['numerology_attributes']['career'] }}</p>
+                    <p>{{ $data['numerology_attributes']['career'] ?? '' }}</p>
                 </div>
             </div>
 
@@ -184,7 +184,7 @@
                        
                 <div class="ast_team_box">
                     <h4>Don’ts</h4>
-                    @foreach ($data['numerology_attributes']['donts'] as $dont)
+                    @foreach ($data['numerology_attributes']['donts'] ?? '' as $dont)
                         <p>{{ $dont }}</p>
                     @endforeach
                 </div>
@@ -204,18 +204,18 @@
             <div class="ast_team_box">
                 <h3 class="text-xl font-bold text-black-700 mb-4">Favourable Attributes</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-800 mb-6">
-                    <p><strong>Favourable Sign:</strong> {{ $data['numerology_attributes']['favourable_sign'] }}</p>
-                    <p><strong>Favourable Alphabets:</strong> {{ $data['numerology_attributes']['favourable_alphabets'] }}</p>
-                    <p><strong>Gemstone:</strong> {{ $data['numerology_attributes']['gemstone'] }}</p>
-                    <p><strong>Favourable Days:</strong> {{ $data['numerology_attributes']['favourable_days'] }}</p>
-                    <p><strong>Favourable Numbers:</strong> {{ $data['numerology_attributes']['favourable_number'] }}</p>
-                    <p><strong>Favourable Dates:</strong> {{ $data['numerology_attributes']['favourable_dates'] }}</p>
-                    <p><strong>Direction:</strong> {{ $data['numerology_attributes']['direction'] }}</p>
-                    <p><strong>Auspicious Color:</strong> {{ $data['numerology_attributes']['auspicious_color'] }}</p>
-                    <p><strong>Ruling Planet:</strong> {{ $data['numerology_attributes']['ruling_planet'] }}</p>
-                    <p><strong>God/Goddess:</strong> {{ $data['numerology_attributes']['god_goddess'] }}</p>
-                    <p><strong>Fast Day:</strong> {{ $data['numerology_attributes']['fast'] }}</p>
-                    <p><strong>Mantra:</strong> {{ $data['numerology_attributes']['mantra'] }}</p>
+                    <p><strong>Favourable Sign:</strong> {{ $data['numerology_attributes']['favourable_sign'] ?? '' }}</p>
+                    <p><strong>Favourable Alphabets:</strong> {{ $data['numerology_attributes']['favourable_alphabets'] ?? '' }}</p>
+                    <p><strong>Gemstone:</strong> {{ $data['numerology_attributes']['gemstone'] ?? '' }}</p>
+                    <p><strong>Favourable Days:</strong> {{ $data['numerology_attributes']['favourable_days'] ?? '' }}</p>
+                    <p><strong>Favourable Numbers:</strong> {{ $data['numerology_attributes']['favourable_number'] ?? '' }}</p>
+                    <p><strong>Favourable Dates:</strong> {{ $data['numerology_attributes']['favourable_dates'] ?? '' }}</p>
+                    <p><strong>Direction:</strong> {{ $data['numerology_attributes']['direction'] ?? '' }}</p>
+                    <p><strong>Auspicious Color:</strong> {{ $data['numerology_attributes']['auspicious_color'] ?? '' }}</p>
+                    <p><strong>Ruling Planet:</strong> {{ $data['numerology_attributes']['ruling_planet'] ?? '' }}</p>
+                    <p><strong>God/Goddess:</strong> {{ $data['numerology_attributes']['god_goddess'] ?? '' }}</p>
+                    <p><strong>Fast Day:</strong> {{ $data['numerology_attributes']['fast'] ?? '' }}</p>
+                    <p><strong>Mantra:</strong> {{ $data['numerology_attributes']['mantra'] ?? '' }}</p>
                 </div>
             </div>
 
@@ -223,7 +223,7 @@
             {{-- @if (isset($data['name_suggestion']))
             <div class="mt-6 p-4 bg-yellow-100 rounded-xl">
                 <h3 class="font-semibold text-lg text-yellow-800 mb-2">Suggested Name Correction</h3>
-                <p class="text-sm text-gray-700">To align better with your numerology, consider a name change or spelling like: <strong>{{ $data['name_suggestion'] }}</strong></p>
+                <p class="text-sm text-gray-700">To align better with your numerology, consider a name change or spelling like: <strong>{{ $data['name_suggestion'] ?? '' }}</strong></p>
             </div>
             @endif --}}
         </div>
