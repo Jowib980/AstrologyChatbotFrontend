@@ -45,60 +45,70 @@
     <div class="container">
         <div class="row">
             <div class="ast_heading">
-                <h1><span>Match my Horoscope</span></h1>
-            </div>
-            <!-- Boy Form -->
-            <div id="boyFormSection" class="hidden mb-4">
-                <h3>Enter Boy's Details</h3>
-                <form id="boyForm" class="space-y-4">
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">Name</label>
-                        <input name="name" placeholder="Boy's Name"
-                               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">Date of Birth</label>
-                        <input name="dob" type="date" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">Time of Birth</label>
-                        <input name="tob" type="time" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">Place of Birth</label>
-                        <input name="place" id="boy-place-input" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm" autocomplete="off">
-                        <ul id="boy-place-suggestions" class="suggestion-list hidden"></ul>
-                    </div>
-                    <input type="hidden" name="gender" value="Male">
-                    <button type="submit" class="ast_btn submit_btn">Match Horoscope</button>
-                </form>
+                <h1><span>Match Horoscope</span></h1>
             </div>
 
-            <!-- Girl Form -->
-            <div id="girlFormSection" class="hidden">
-                <h3>Enter Girl's Details</h3>
-                <form id="girlForm" class="space-y-4">
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">Name</label>
-                        <input name="name" placeholder="Girl's Name"
-                               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">Date of Birth</label>
-                        <input name="dob" type="date" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">Time of Birth</label>
-                        <input name="tob" type="time" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-medium mb-1">Place of Birth</label>
-                        <input name="place" id="girl-place-input" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm" autocomplete="off">
-                        <ul id="girl-place-suggestions" class="suggestion-list hidden"></ul>
-                    </div>
-                    <input type="hidden" name="gender" value="Female">
-                    <button type="submit" class="ast_btn submit_btn">Match Horoscope</button>
-                </form>
+            <div class="text-center mb-6">
+                <button id="selfBtn" class="ast_btn mr-2">Self</button>
+                <button id="otherBtn" class="ast_btn">Another Person</button>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <!-- Boy Form -->
+                <div id="boyFormSection" class="hidden mb-4">
+                    <h3>Enter Boy's Details</h3>
+                    <form id="boyForm" class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Name</label>
+                            <input name="name" placeholder="Boy's Name"
+                                   class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Date of Birth</label>
+                            <input name="dob" type="date" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Time of Birth</label>
+                            <input name="tob" type="time" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Place of Birth</label>
+                            <input name="place" id="boy-place-input" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm" autocomplete="off">
+                            <ul id="boy-place-suggestions" class="suggestion-list hidden"></ul>
+                        </div>
+                        <input type="hidden" name="gender" value="Male">
+                        <button type="submit" class="ast_btn submit_btn">Match Horoscope</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <!-- Girl Form -->
+                <div id="girlFormSection" class="hidden">
+                    <h3>Enter Girl's Details</h3>
+                    <form id="girlForm" class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Name</label>
+                            <input name="name" placeholder="Girl's Name"
+                                   class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Date of Birth</label>
+                            <input name="dob" type="date" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Time of Birth</label>
+                            <input name="tob" type="time" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Place of Birth</label>
+                            <input name="place" id="girl-place-input" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-sm" autocomplete="off">
+                            <ul id="girl-place-suggestions" class="suggestion-list hidden"></ul>
+                        </div>
+                        <input type="hidden" name="gender" value="Female">
+                        <button type="submit" class="ast_btn submit_btn">Match Horoscope</button>
+                    </form>
+                </div>
             </div>
 
             <div id="matchBothBtnWrapper" class="text-center mt-4 hidden">
@@ -117,6 +127,39 @@
         const userId = localStorage.getItem("user_id");
         const gender = (localStorage.getItem("gender") || "").toLowerCase(); // Make it case-insensitive
         const isLoggedIn = !!userId;
+
+        // Hide everything at first
+        $('#boyFormSection, #girlFormSection, #matchBothBtnWrapper').hide();
+
+        let currentMode = null;
+
+        // Click: Self
+
+        $('#selfBtn').on('click', function () {
+            currentMode = 'self';
+            $('#matchBothBtnWrapper').hide();
+            if (isLoggedIn) {
+                if (gender === "male") {
+                    $('#girlFormSection').show();
+                    $('#boyFormSection').hide();
+                } else if (gender === "female") {
+                    $('#boyFormSection').show();
+                    $('#girlFormSection').hide();
+                }
+                $('.submit_btn').show();
+            } else {
+                Swal.fire('Please log in to use Self mode.');
+            }
+        });
+
+        // Click: Another Person
+        $('#otherBtn').on('click', function () {
+            currentMode = 'another';
+            $('#boyFormSection, #girlFormSection').show();
+            $('.submit_btn').hide();
+            $('#matchBothBtnWrapper').show();
+        });
+
 
         // Show correct forms
         if (!isLoggedIn) {
@@ -191,12 +234,16 @@
             const boyData = collectFormData('#boyForm');
 
             if (!isLoggedIn) {
-                localStorage.setItem("boyData", JSON.stringify(boyData));
-                const girlData = JSON.parse(localStorage.getItem("girlData") || '{}');
-                if (girlData.name) {
-                    callMatchAPI(boyData, girlData);
-                } else {
-                    showToast('error', "Please fill girl's details too.");
+
+                if (currentMode === 'another') {
+
+                    localStorage.setItem("boyData", JSON.stringify(boyData));
+                    const girlData = JSON.parse(localStorage.getItem("girlData") || '{}');
+                    if (girlData.name) {
+                        callMatchAPI(boyData, girlData);
+                    } else {
+                        showToast('error', "Please fill girl's details too.");
+                    }
                 }
             } else if (gender === "female") {
                 const user = {
@@ -217,12 +264,14 @@
             const girlData = collectFormData('#girlForm');
 
             if (!isLoggedIn) {
-                localStorage.setItem("girlData", JSON.stringify(girlData));
-                const boyData = JSON.parse(localStorage.getItem("boyData") || '{}');
-                if (boyData.name) {
-                    callMatchAPI(boyData, girlData);
-                } else {
-                    showToast('error', "Please fill boy's details too.");
+                if (currentMode === 'another') {
+                    localStorage.setItem("girlData", JSON.stringify(girlData));
+                    const boyData = JSON.parse(localStorage.getItem("boyData") || '{}');
+                    if (boyData.name) {
+                        callMatchAPI(boyData, girlData);
+                    } else {
+                        showToast('error', "Please fill boy's details too.");
+                    }
                 }
             } else if (gender === "male") {
                 const user = {
