@@ -235,7 +235,7 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    axios.get('http://127.0.0.1:5000/api/services')
+    axios.get('https://astro.jowibtechnologies.com/api/services')
         .then(function (response) {
             let services = response.data;
             let html = '';
