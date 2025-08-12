@@ -48,7 +48,7 @@
 		<div class="row">
 			<div class="col-lg-7 col-md-12 col-sm-12 col-12 order-lg-1 order-md-2 order-sm-2 order-2">
 				<div class="ast_about_info">
-					<h4>know about horoscope</h4>h
+					<h4>know about horoscope</h4>
 					<p>Astrology is an ancient system of knowledge that studies the relationship between celestial bodies and human life. For thousands of years, civilizations across the world—from India, China, and Babylon to Greece and Egypt—have observed the movements of the Sun, Moon, planets, and stars to gain insight into personality, destiny, and natural events. At its heart, astrology is based on the belief that the positions of these cosmic bodies at the time of a person’s birth influence their traits, emotions, strengths, challenges, and life path.</p>
 					<p>In astrology, the birth chart (or horoscope) is the central tool. It is a map of the sky at the exact moment and location of a person’s birth, divided into 12 sections called houses, each representing different aspects of life—such as career, relationships, health, and spirituality. The zodiac signs—Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, and Pisces—are associated with distinct qualities and ruling planets.</p>
 				</div>
@@ -217,53 +217,12 @@
 				</div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-12">
-			<div class="ast_service_slider">
-				<div class="owl-carousel owl-theme">
-				    @php
-				        $cards = [
-				            ['title' => 'Birth Kundali/Chart', 'img' => 'ic_kundali.png', 'desc' => 'Planetary position and your chart...'],
+				<div class="ast_service_slider">
+					<div class="owl-carousel owl-theme" id="services-carousel">
+    
+					</div>
 
-				            ['title' => 'Match Horoscope', 'img' => 'ic_matching.png', 'desc' => 'Match Horoscope (Guna milan with your partner)'],
-
-				            ['title' => 'Your Life Predictions', 'img' => 'ic_predection.png', 'desc' => 'Know about your Nature Love and Career'],
-
-				            ['title' => 'Numerology', 'img' => 'ic_numerology.png', 'desc' => 'Know your lucky number'],
-
-				            ['title' => 'Nakshatra', 'img' => 'nakshatra.png', 'desc' => 'Know about your Nakshatra'],
-
-				            ['title' => 'Nature', 'img' => 'nakshatra.png', 'desc' => 'Know about your Nature'],
-
-				            ['title' => 'Health Index', 'img' => 'ic_health.png', 'desc' => 'Know about your health'],
-
-				            ['title' => 'Love', 'img' => 'love.png', 'desc' => 'Know about your love'],
-
-				            ['title' => 'Gemstone', 'img' => 'ic_gemstone.png', 'desc' => 'Which gemstone will suit you? Which gem should you wear? How to wear gemstone?'],
-
-				            ['title' => 'Career', 'img' => 'career.png', 'desc' => 'Know about your career'],
-
-				            ['title' => 'Kalsarp Dosh/Yog', 'img' => 'kalsarp-dosh.png', 'desc' => 'Know about impact of Kalsharp dosh for whole life.'],
-
-				            ['title' => 'Mangal Dosha', 'img' => 'ic_mangal_dosh.png', 'desc' => 'Do you have Mangal dosha? What are the remedies? What are the impact on your married life?'],
-
-				            ['title' => 'Ascendant', 'img' => 'ascendant.png', 'desc' => 'What does your Ascendant Nakshatra and Moon Sign tell about you.'],
-
-				            ['title' => 'Gochar Phal (Transit Report)', 'img' => 'ic_transit_today.png', 'desc' => 'How does position of current planets impact you?']
-				        ];
-				    @endphp
-
-				    @foreach ($cards as $card)
-				        <div class="item">
-				            <div class="ast_service_box">
-				                <img src="{{ asset('images/' . $card['img']) }}" alt="Service" class="card-image">
-				                <h4>{{ $card['title'] }}</h4>
-				                <p>{{ $card['desc'] }}</p>
-				                <div class="clearfix"></div>
-				            </div>
-				        </div>
-				    @endforeach
 				</div>
-
-			</div>
 			</div>
 		</div>
 	</div>
@@ -271,3 +230,53 @@
 <!--Services End-->
 
 @endsection
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    axios.get('http://127.0.0.1:5000/api/services')
+        .then(function (response) {
+            let services = response.data;
+            let html = '';
+
+            services.forEach(s => {
+                html += `
+                <div class="item">
+                    <div class="ast_service_box">
+                        <img src="/images/${s.img}" alt="${s.title}" class="card-image">
+                        <h4>${s.title}</h4>
+                        <p>${s.description}</p>
+                    </div>
+                </div>
+                `;
+            });
+
+            let $carousel = $('#services-carousel');
+
+            // Destroy old carousel if it exists
+            if ($carousel.hasClass('owl-loaded')) {
+                $carousel.trigger('destroy.owl.carousel').removeClass('owl-loaded');
+                $carousel.find('.owl-stage-outer').children().unwrap();
+            }
+
+            // Inject new items
+            $carousel.html(html);
+
+            // Initialize Owl after HTML is ready
+            $carousel.owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 2 },
+                    1000: { items: 4 }
+                }
+            });
+        })
+        .catch(function (error) {
+            console.error('Error fetching services:', error);
+        });
+});
+</script>

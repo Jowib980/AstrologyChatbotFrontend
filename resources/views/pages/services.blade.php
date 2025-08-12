@@ -41,61 +41,7 @@
     <div class="ast_service_wrapper ast_toppadder70 ast_bottompadder50">
         <div class="container">
             <div class="row">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-
-                    @php
-                        $cards = [
-                            ['id' => 'birth-kundali-card', 'title' => 'Birth Kundali/Chart', 'img' => 'ic_kundali.png', 'desc' => 'Planetary position and your chart...', 'route' => '/kundali', 'fields' => ['name','dob','tob','place','gender', 'user_id']],
-
-                            ['title' => 'Match Horoscope', 'img' => 'ic_matching.png', 'desc' => 'Match Horoscope (Guna milan with your partner)', 'route' => '/horoscope', 'link' => true],
-
-                            ['class' => 'prediction-card', 'title' => 'Your Life Predictions', 'img' => 'ic_predection.png', 'desc' => 'Know about your Nature Love and Career', 'route' => '/prediction', 'fields' => ['name','dob','tob','place', 'user_id']],
-
-                            ['id' => 'numerology-card', 'title' => 'Numerology', 'img' => 'ic_numerology.png', 'desc' => 'Know your lucky number', 'route' => '/numerology', 'fields' => ['name','dob','tob','place', 'user_id']],
-
-                            ['id' => 'nakshatra-card', 'title' => 'Nakshatra', 'img' => 'nakshatra.png', 'desc' => 'Know about your Nakshatra', 'route' => '/nakshatra', 'fields' => ['name','dob','tob','place', 'user_id']],
-
-                            ['title' => 'Nature', 'img' => 'nakshatra.png', 'desc' => 'Know about your Nature', 'route' => '/prediction', 'fields' => ['name','dob','tob','place', 'user_id']],
-
-                            ['id' => 'health-card', 'title' => 'Health Index', 'img' => 'ic_health.png', 'desc' => 'Know about your health', 'route' => '/health', 'fields' => ['dob','tob','place', 'user_id']],
-
-                            ['id' => 'love-card', 'title' => 'Love', 'img' => 'love.png', 'desc' => 'Know about your love', 'route' => '/love', 'fields' => ['name','dob','tob','place','gender', 'user_id']],
-
-                            ['id' => 'gemstone-card', 'title' => 'Gemstone', 'img' => 'ic_gemstone.png', 'desc' => 'Which gemstone will suit you? Which gem should you wear? How to wear gemstone?', 'route' => '/gemstone', 'fields' => ['name','dob','tob','place', 'user_id']],
-
-                            ['id' => 'career-card', 'title' => 'Career', 'img' => 'career.png', 'desc' => 'Know about your career', 'route' => '/career', 'fields' => ['name', 'dob', 'tob', 'place', 'gender', 'user_id']],
-
-                            ['id' => 'kalsarp-card', 'title' => 'Kalsarp Dosh/Yog', 'img' => 'kalsarp-dosh.png', 'desc' => 'Know about impact of Kalsharp dosh for whole life.', 'route' => '/kalsarp', 'fields' => ['name', 'dob', 'tob', 'place', 'user_id']],
-
-                            ['id' => 'mangla-card', 'title' => 'Mangal Dosha', 'img' => 'ic_mangal_dosh.png', 'desc' => 'Do you have Mangal dosha? What are the remedies? What are the impact on your married life?', 'route' => '/mangal', 'fields' => ['name', 'dob', 'tob', 'place', 'user_id']],
-
-                            ['id' => 'ascendant-card', 'title' => 'Ascendant', 'img' => 'ascendant.png', 'desc' => 'What does your Ascendant  Nakshatra  and Moon Sign  tell about you.', 'route' => '/ascendant', 'fields' => ['name', 'dob', 'tob', 'place', 'user_id']],
-
-                            ['id' => 'gochar-card', 'title' => 'Gochar Phal (Transit Report)', 'img' => 'ic_transit_today.png', 'desc' => "How does position of current planets impact you?", 'route' => '/transit', 'fields' => ['name', 'dob', 'tob', 'place', 'user_id']]
-                        ];
-                    @endphp
-
-                    @foreach ($cards as $card)
-                        @if(isset($card['link']) && $card['link'])
-                            <a href="{{ $card['route'] }}">
-                        @endif
-                        <div
-                            class="ast_service_box {{ $card['class'] ?? '' }}"
-                            @if(isset($card['id'])) id="{{ $card['id'] }}" @endif
-                            data-route="{{ $card['route'] }}"
-                            data-fields='@json($card['fields'] ?? [])'
-                        >
-                            <div class="">
-                                <img src="{{ asset('images/' . $card['img']) }}" alt="Service" class="card-image">
-                                <h4>{{ $card['title'] }}</h4>
-                                <p>{{ $card['desc'] }}</p>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                        @if(isset($card['link']) && $card['link'])
-                            </a>
-                        @endif
-                    @endforeach
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2" id="services-carousel">
 
                 </div>
             </div>
@@ -152,8 +98,41 @@
 @endsection
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+    // Load services from API and render cards
+    axios.get('http://127.0.0.1:5000/api/services')
+        .then(function (response) {
+            let services = response.data;
+            let html = '';
+
+            services.forEach(s => {
+                let openLink = s.link ? `<a href="${s.route}">` : '';
+                let closeLink = s.link ? `</a>` : '';
+                let extraClass = s.class ? s.class : '';
+                let idAttr = s.card_id ? `id="${s.card_id}"` : '';
+                let dataFields = s.fields ? `data-fields='${JSON.stringify(s.fields).replace(/'/g, "&apos;")}'` : '';
+
+                html += `
+                    ${openLink}
+                    <div class="ast_service_box cursor-pointer ${extraClass}" ${idAttr} data-route="${s.route}" ${dataFields}>
+                        <div>
+                            <img src="/images/${s.img}" alt="${s.title}" class="card-image" />
+                            <h4>${s.title}</h4>
+                            <p>${s.description}</p>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    ${closeLink}
+                `;
+            });
+
+            document.getElementById('services-carousel').innerHTML = html;
+        })
+        .catch(function (error) {
+            console.error('Error fetching services:', error);
+        });
 
     const userData = {
         user_id: localStorage.getItem("user_id"),
@@ -164,21 +143,19 @@ document.addEventListener('DOMContentLoaded', function () {
         gender: localStorage.getItem("gender")
     };
 
-
     const isLoggedIn = !!userData.user_id;
 
     function showToast(type, message) {
         Swal.fire({
             toast: true,
             position: 'top-end',
-            icon: type, // 'success', 'error', 'warning', 'info', 'question'
+            icon: type,
             title: message,
             showConfirmButton: false,
             timer: 3000,
             timerProgressBar: true
         });
     }
-
 
     function createAndSubmitForm(route, fields) {
         $('#loader').removeClass('hidden');
@@ -203,9 +180,8 @@ document.addEventListener('DOMContentLoaded', function () {
         form.submit();
     }
 
-
-    $('.ast_service_box').on('click', function () {
-
+    // Use event delegation to handle click on dynamically added .ast_service_box
+    $('#services-carousel').on('click', '.ast_service_box', function () {
         if (!isLoggedIn) {
             showToast('error', 'Please login first!');
             return;
