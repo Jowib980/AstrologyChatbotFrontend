@@ -94,7 +94,7 @@
 
 <script>
 
-const BACKEND_API_URL = "https://astrology.jowibtechnologies.com/api";
+const BACKEND_API = "{{ config('services.backend_api_url') }}";
 
 // ✅ LOGIN FUNCTION
 async function handleLogin(e) {
@@ -107,7 +107,7 @@ async function handleLogin(e) {
     document.getElementById('login-error').style.display = 'none';
 
     try {
-        const response = await fetch(`${BACKEND_API_URL}/login`, {
+        const response = await fetch(`${BACKEND_API}/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
@@ -161,7 +161,7 @@ async function handleRegister(e) {
     document.getElementById('register-success').style.display = 'none';
 
     try {
-        const response = await fetch(`${BACKEND_API_URL}/register`, {
+        const response = await fetch(`${BACKEND_API}/register`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, email, password, dob, tob, place, gender })
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("logoutBtn")?.addEventListener("click", function (e) {
         e.preventDefault();
         localStorage.clear();
-        window.location.reload();
+        window.location.href = '/';
     });
 });
 

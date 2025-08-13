@@ -117,7 +117,7 @@
         let userDOB = '';
         let birthtime = '';
         let birthplace = '';
-        const BACKEND_API_URL = "{{ env('BACKEND_API_URL') }}"
+        const BACKEND_API_URL = "{{ config('services.backend_api_url') }}";
 
         document.addEventListener('DOMContentLoaded', function () {
             userName = localStorage.getItem("username");

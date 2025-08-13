@@ -123,6 +123,9 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
+
+    const BACKEND_API_URL = "{{ config('services.backend_api_url') }}";
+
     $(document).ready(function () {
         const userId = localStorage.getItem("user_id");
         const gender = (localStorage.getItem("gender") || "").toLowerCase(); // Make it case-insensitive
@@ -208,7 +211,7 @@
         function callMatchAPI(user, partner) {
             $('#loader').removeClass('hidden');
             $.ajax({
-                url: "https://astrology.jowibtechnologies.com/api/match_horoscope",
+                url: `${BACKEND_API_URL}/match_horoscope`,
                 method: "POST",
                 contentType: "application/json",
                 data: JSON.stringify({ user, partner }),

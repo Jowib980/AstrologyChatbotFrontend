@@ -8,8 +8,12 @@ use Illuminate\Support\Facades\Http;
 class KundaliController extends Controller
 {
 
+
     private function callApi(Request $request, string $endpoint, array $fields, string $view, string $errorKey, string $valueKey = null)
     {
+
+        $apiUrl = config('services.backend_api_url');
+
         $payload = [];
         foreach ($fields as $field) {
             $payload[$field] = $request->input($field);
@@ -17,7 +21,7 @@ class KundaliController extends Controller
 
         $response = Http::withHeaders([
             'Content-Type' => 'application/json',
-        ])->post("https://astrology.jowibtechnologies.com/api/{$endpoint}", $payload);
+        ])->post($apiUrl . '/' . $endpoint, $payload);
 
         // if (!$response->successful()) {
         //     return back()->withErrors([$errorKey => ucfirst($errorKey) . ' request failed.']);
@@ -166,6 +170,8 @@ class KundaliController extends Controller
     
     public function horoscopeResult(Request $request)
     {
+        $apiUrl = config('services.backend_api_url');
+
         $matchId = $request->query('match_id');
 
         if (!$matchId) {
@@ -173,7 +179,7 @@ class KundaliController extends Controller
         }
 
         try {
-            $response = Http::get("https://astrology.jowibtechnologies.com/api/get_match/{$matchId}");
+            $response = Http::get($apiUrl . "/get_match/" . $matchId );
 
             if ($response->failed()) {
                 return redirect()->back()->with('error', 'Unable to fetch match data.');

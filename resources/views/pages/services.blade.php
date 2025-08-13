@@ -100,9 +100,13 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
+
+    const BACKEND_API_URL = "{{ config('services.backend_api_url') }}";
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // Load services from API and render cards
-    axios.get('https://astrology.jowibtechnologies.com/api/services')
+    axios.get(`${BACKEND_API_URL}/services`)
         .then(function (response) {
             let services = response.data;
             let html = '';

@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Http\Controllers\KundaliController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\RashiController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -51,3 +52,5 @@ Route::post('/kalsarp', [KundaliController::class, 'kalsarp'])->name('submit.kal
 Route::post('/mangal', [KundaliController::class, 'mangal'])->name('submit.mangal');
 Route::post('/ascendant', [KundaliController::class, 'ascendant'])->name('submit.ascendant');
 Route::post('/transit', [KundaliController::class, 'gochar'])->name('submit.transit');
+
+Route::get('/rashi/{route}', [RashiController::class, 'show']);
