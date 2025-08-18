@@ -33,7 +33,7 @@
             <div class="col-lg-9 col-md-8 col-sm-12">
                 <div class="ast_blog_box">
                    <div class="ast_blog_img">
-                        <img src="{{ asset('images/' . $rashi['img']) }}" 
+                        <img src="{{ $rashi['img'] }}" 
                              alt="{{ $rashi['title'] }}" 
                              title="{{ $rashi['title'] }}">
                     </div>
@@ -53,7 +53,7 @@
                     <aside>
                         {!! $rashi['short_description'] !!}
                     </aside>
-                </div>
+                </div>  
             </div> -->
         </div>
     </div>

@@ -103,6 +103,7 @@
 
     const BACKEND_API_URL = "{{ config('services.backend_api_url') }}";
 
+    const BACKEND_URL = "{{ config('services.backend_url') }}";
 
 document.addEventListener('DOMContentLoaded', function () {
     // Load services from API and render cards
@@ -122,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     ${openLink}
                     <div class="ast_service_box cursor-pointer ${extraClass}" ${idAttr} data-route="${s.route}" ${dataFields}>
                         <div>
-                            <img src="/images/${s.img}" alt="${s.title}" class="card-image" />
+                            <img src="${BACKEND_URL}${s.img}" alt="${s.title}" class="card-image" />
                             <h4>${s.title}</h4>
                             <p>${s.description}</p>
                             <div class="clearfix"></div>

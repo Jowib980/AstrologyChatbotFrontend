@@ -207,6 +207,7 @@
 <script>
 
 	const BACKEND_API_URL = "{{ config('services.backend_api_url') }}";
+	const BACKEND_URL = "{{ config('services.backend_url') }}";
 
 	document.addEventListener('DOMContentLoaded', function () {
 	    axios.get(`${BACKEND_API_URL}/services`)
@@ -218,7 +219,7 @@
 	                html += `
 	                <div class="item">
 	                    <div class="ast_service_box">
-	                        <img src="/images/${s.img}" alt="${s.title}" class="card-image">
+	                        <img src="${BACKEND_URL}${s.img}" alt="${s.title}" class="card-image">
 	                        <h4>${s.title}</h4>
 	                        <p>${s.description}</p>
 	                    </div>
