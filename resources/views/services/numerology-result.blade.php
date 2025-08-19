@@ -177,24 +177,30 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 <div class="ast_team_box">
                     <h4>Dos</h4>
-                    @foreach ($data['numerology_attributes']['dos'] as $do)
-                        <p>{{ $do }}</p>
-                    @endforeach
+                    @if(isset($data['numerology_attributes']))
+                        @foreach ($data['numerology_attributes']['dos'] as $do)
+                            <p>{{ $do }}</p>
+                        @endforeach
+                    @endif
                 </div>
                        
                 <div class="ast_team_box">
                     <h4>Don’ts</h4>
-                    @foreach ($data['numerology_attributes']['donts'] ?? '' as $dont)
-                        <p>{{ $dont }}</p>
-                    @endforeach
+                    @if(isset($data['numerology_attributes']))
+                        @foreach ($data['numerology_attributes']['donts'] as $dont)
+                            <p>{{ $dont }}</p>
+                        @endforeach
+                    @endif
                 </div>
 
                 <div class="ast_team_box">
                     <h4>Compatible Numbers</h4>
                     <ul class="list-disc list-inside text-sm text-gray-800">
-                        @foreach ($data['numerology_attributes']['compatibles'] as $num)
-                            <li>{{ $num }}</li>
-                        @endforeach
+                        @if(isset($data['numerology_attributes']))
+                            @foreach ($data['numerology_attributes']['compatibles'] as $num)
+                                <li>{{ $num }}</li>
+                            @endforeach
+                        @endif
                     </ul>
                 </div>
 
@@ -215,7 +221,27 @@
                     <p><strong>Ruling Planet:</strong> {{ $data['numerology_attributes']['ruling_planet'] ?? '' }}</p>
                     <p><strong>God/Goddess:</strong> {{ $data['numerology_attributes']['god_goddess'] ?? '' }}</p>
                     <p><strong>Fast Day:</strong> {{ $data['numerology_attributes']['fast'] ?? '' }}</p>
-                    <p><strong>Mantra:</strong> {{ $data['numerology_attributes']['mantra'] ?? '' }}</p>
+                    <p><strong>Mantra:</strong> 
+                        @if($data['numerology_attributes']['number'] == 1)
+                            ॐ घृणिः सूर्याय नमः
+                        @elseif($data['numerology_attributes']['number'] == 2)
+                            ॐ चन्द्राय नमः
+                        @elseif($data['numerology_attributes']['number'] == 3)
+                            ॐ बृं बृहस्पतये नमः
+                        @elseif($data['numerology_attributes']['number'] == 4)
+                            ॐ रां राहवे नमः
+                        @elseif($data['numerology_attributes']['number'] == 5)
+                            ॐ बुं बुधाय नमः
+                        @elseif($data['numerology_attributes']['number'] == 6)
+                            ॐ शुं शुक्राय नमः
+                        @elseif($data['numerology_attributes']['number'] == 7)
+                            ॐ कें केतवे नमः
+                        @elseif($data['numerology_attributes']['number'] == 8)
+                            ॐ शं शनैश्चराय नमः
+                        @elseif($data['numerology_attributes']['number'] == 9)
+                            ॐ क्रां क्रीं क्रौं सः भौमाय नमः
+                        @endif
+                    </p>
                 </div>
             </div>
 

@@ -32,7 +32,7 @@
 <div class="ast_blog_wrapper ast_toppadder80 ast_bottompadder80">
     <div class="container">
         <div class="row">
-        	<h2 class="text-2xl font-semibold text-center stroke-current mb-4">Your Character, Happiness and Fulfillment, Lifestyle</h2>
+        	<h2 class="text-2xl font-semibold text-center stroke-current mb-4">Your Love Life</h2>
 
             <div class="space-y-4 text-lg text-gray-800">
                 <h2>LOVE MATTERS:</h2>

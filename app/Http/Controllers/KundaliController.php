@@ -27,7 +27,8 @@ class KundaliController extends Controller
         //     return back()->withErrors([$errorKey => ucfirst($errorKey) . ' request failed.']);
         // }
 
-        $jsonData = $response->json();
+        $jsonData = json_decode($response->body(), true, 512, JSON_UNESCAPED_UNICODE);
+// dd($jsonData);
         $data = $valueKey ? ($jsonData[$valueKey] ?? null) : $jsonData;
         // dd($data);
 
